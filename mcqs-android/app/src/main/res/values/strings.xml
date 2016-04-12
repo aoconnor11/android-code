@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MCQS</string>
+
+    <string name="title_activity_view_question">MCQS Quiz</string>
+
+    <string name="title_activity_main">MCQS</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_change_exam">Change Exam</string>
+    <string name="action_change_level">Change Difficulty Level</string>
+    <string name="action_log_out">Log Out</string>
+    <string name="title_activity_choose_exam">Choose Package</string>
+    <string name="title_activity_download_exam">Download Package</string>
+    <string name="title_activity_single_view">Exam</string>
+    <string name="exam_prompt">Choose a Package</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="choose_package">Choose Package</string>
+    <string name="title_activity_log_in">Log In</string>
+    <string name="title_activity_select_quiz">Select Quiz</string>
+    <string name="title_activity_exam_results">Exam Results</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+    <string-array name="result_options">
+        <item>@string/correct</item>
+        <item>@string/incorrect</item>
+    </string-array>
+    <string name="MCQS_results">MCQS Results</string>
+    <string name="download">Download</string>
+    <string name="log_in_error">Log In Error</string>
+    <string name="ok">OK</string>
+    <string name="log_in_error_blank">Please enter your user name and password</string>
+    <string name="log_in_error_name">Please enter your user name</string>
+    <string name="log_in_error_password">Please enter your password</string>
+    <string name="log_in_wrong_details">Incorrect Username and/or Password.</string>
+    <string name="error">Error</string>
+    <string name="custom_value_error">Please enter your custom value</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_reset_password">ResetPassword</string>
+    <string name="title_activity_choose_category">ChooseCategory</string>
+</resources>

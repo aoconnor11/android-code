@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mcqs.anita.android_app"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.mcqs.anita.android_app.ViewQuestion"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_view_question"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.ViewExam"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_view_question"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.LogIn"
+            android:label="@string/title_activity_log_in"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.SelectQuiz"
+            android:label="@string/title_activity_select_quiz"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.ExamResults"
+            android:label="@string/title_activity_exam_results"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.SignUp"
+            android:label="@string/title_activity_sign_up"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.ResetPassword"
+            android:label="@string/title_activity_reset_password"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.ChooseCategory"
+            android:label="@string/title_activity_choose_category"></activity>
+        <activity
+            android:name="com.mcqs.anita.android_app.ChooseExam"
+            android:label="@string/title_activity_choose_exam"></activity>
+    </application>
+</manifest>

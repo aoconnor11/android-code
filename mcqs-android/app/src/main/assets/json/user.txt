@@ -1,0 +1,1 @@
+[{"currentUserId" : 0, "currentExamId" : 4, "currentDifficultyLevel" : 0.4, "defaultExam" : 3, "apiRoute" : "https://www.faircity.com/papi"}]

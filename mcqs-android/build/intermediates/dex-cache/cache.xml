@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\classes-94e8e473f755104fc55488e08c3692eb2985f78c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\classes-2439d2502d91fd52d95fb30c39ed419b1a38b7df.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.1.6\b036abbb61656165da99cf44898e4b9123687e65\MPAndroidChart-v2.1.6.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b036abbb61656165da99cf44898e4b9123687e65">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v2.1.6-d246ee005aef66626819598d372244229e87c482.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.5.1\e2a00ad1d7e540ec395e9296a34da484c8888d4d\jackson-core-2.5.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e2a00ad1d7e540ec395e9296a34da484c8888d4d">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\jackson-core-2.5.1-0643fba878d3e5fce42d3687f777af63446f5bfc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\classes-466c42147ccc50f43bb82f7f912dee473a5aafd7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\gson-2.2.4-3c5ad9ad9a2bd295e51ac142a439cf0cc6bcd1ef.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-7c50d45c894174ab4d54709b318b152f4c1911a2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-094ebf8c077d1151bd0fb6cefdc0b8b2eea9bd4c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\.gradle\caches\modules-2\files-2.1\com.bluelinelabs\logansquare\1.1.0\9c105f79ad6cab7b9c8ea384f34d0c753fd50eea\logansquare-1.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9c105f79ad6cab7b9c8ea384f34d0c753fd50eea">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\logansquare-1.1.0-e9edf6c72959a46368c9ecafdc446e79092a406a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\libs\markdownview-1.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6dfceaa4daa04ee7ed4cdda1157e3de8ede56a90">
+        <dex dex="C:\Users\Anita\Google Drive\Radio\mcqs-android\app\build\intermediates\pre-dexed\debug\markdownview-1.2-281c47d2d6a5e4ec30cdd85fbb69e629ec2af188.jar" />
+    </item>
+
+</items>

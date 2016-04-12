@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.mcqs.anita.mcqs_android_coding"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file("keystore.release.jks")
+            storePassword "oakpark1"
+            keyAlias "MCQSAndroidKey1"
+            keyPassword "oakpark1"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    }
+}
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+apply plugin: 'com.neenbedankt.android-apt'
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.google.code.gson:gson:2.2.4'
+    apt 'com.bluelinelabs:logansquare-compiler:1.1.0'
+    compile 'com.bluelinelabs:logansquare:1.1.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
+
+}
