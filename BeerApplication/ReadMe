@@ -1,0 +1,12 @@
+Coding Challenge:
+
+Create a simple app that hooks into the beers api. http://www.brewerydb.com/developers. This app should be similar to the Tinder app in its features.
+Functionality
+The app should display a beer from the beers api. The user should be able to swipe left or right to "like" or "dislike" the beers. Alternatively the user has the option to use buttons to achieve the same result. After the user has liked 10 beers, they should be shown a list of the beers they have just liked. The presentation of this list can be done via a simple dialog view, or whatever approach you desire to use.
+Requirements
+- The app should be aimed at Android 5.x.
+- The app must be built using Gradle.
+- Picasso should be used to load and display images.
+- Try to implement the Retrofit library for network calls.
+- Your work must be available as a public project on GitHub.
+This challenge should focus on the functionality of the app rather than its design.
