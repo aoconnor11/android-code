@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundyellow" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/morrisons_logo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCheckoutItems"
+        android:layout_width="fill_parent"
+        android:layout_height="380dp"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/roundbutton2"
+        android:orientation="vertical" >
+    </LinearLayout>
+    
+<ScrollView 
+     android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+             android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+     android:layout_alignBottom="@+id/linearLayoutCheckoutItems"
+        android:layout_alignLeft="@+id/linearLayoutCheckoutItems"
+        android:layout_alignRight="@+id/linearLayoutCheckoutItems"
+        android:layout_alignTop="@+id/linearLayoutCheckoutItems" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/imageView02"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                        android:paddingTop="3dp"
+                android:src="@drawable/carrots" />
+
+            <ImageView
+                android:id="@+id/ImageView03"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                        android:paddingTop="3dp"
+                android:src="@drawable/cabbage" />
+
+            <ImageView
+                android:id="@+id/ImageView02"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                 android:paddingTop="5dp"
+                android:layout_alignLeft="@+id/ImageView03"
+                android:layout_below="@+id/textView1"
+                android:src="@drawable/greenbeans" />
+
+            <ImageView
+                android:id="@+id/ImageView06"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                 android:paddingTop="5dp"
+                 android:layout_below="@+id/TextView03"
+                android:src="@drawable/mushrooms" />
+
+            <ImageView
+                android:id="@+id/ImageView07"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                 android:paddingTop="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TextView02"
+                android:src="@drawable/lettuce" />
+            
+               <ImageView
+                android:id="@+id/ImageView17"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                 android:paddingTop="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TextView05"
+                android:src="@drawable/potatoe" />
+
+            <ImageView
+                android:id="@+id/ImageView08"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                        android:paddingTop="3dp"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/broccoli" />
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                 android:paddingTop="5dp"
+                android:layout_alignLeft="@+id/ImageView02"
+                android:layout_below="@+id/TextView04"
+                android:src="@drawable/onion" />
+
+            <ImageView
+                android:id="@+id/ImageView04"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:paddingTop="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/TextView01"
+                android:src="@drawable/cucumber" />
+
+            <ImageView
+                android:id="@+id/ImageView11"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                 android:paddingTop="5dp"
+                android:layout_alignLeft="@+id/ImageView01"
+                android:layout_below="@+id/TextView07"
+                android:src="@drawable/tomatoe" />
+
+            <ImageView
+                android:id="@+id/ImageView10"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                 android:paddingTop="5dp"
+                android:layout_below="@+id/TextView06"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/spinnach" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ImageView03"
+                android:layout_centerHorizontal="true"
+                android:text="Cabbage"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ImageView02"
+                android:layout_alignParentLeft="true"
+                android:text="Broccoli"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/imageView02"
+                android:text="Carrots"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/ImageView04"
+                android:text="Cucumber"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ImageView07"
+                android:text="Lettuce"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/ImageView06"
+                android:text="Mushrooms"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ImageView17"
+                android:text="Potatoes"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+              
+               <TextView
+                android:id="@+id/TextView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/ImageView10"
+                android:text="Spinach"
+                   android:paddingBottom="10dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ImageView17"
+                android:layout_alignRight="@+id/ImageView01"
+                android:text="Green Beans"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ImageView10"
+                android:layout_centerHorizontal="true"
+                android:text="Onions"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TextView09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="10dp"
+                android:text="Tomato"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+    </RelativeLayout>
+
+
+
+    </ScrollView>
+
+     <LinearLayout
+        android:id="@+id/linearLayoutTab"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+        
+          <Button
+        android:id="@+id/buttonList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Shopping&#10;List" />
+
+          <Button
+              android:id="@+id/buttonItems"
+              android:layout_width="match_parent"
+        android:layout_height="match_parent"
+              android:layout_weight="1"
+              android:text="Items" />
+
+   	 <Button
+        android:id="@+id/buttonStores"
+          android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Choose&#10;Store" />
+   	 
+     
+    </LinearLayout>
+
+</RelativeLayout>

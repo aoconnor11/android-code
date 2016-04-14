@@ -1,0 +1,154 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Snacks extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView chocolate;
+	private ImageView crisps;
+	private ImageView popcorn;
+	private ImageView nachoes;
+	private ImageView sweets;
+	private ImageView jellies;
+	private int points;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.sweets_snacks);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		// store = (Button) findViewById(R.id.buttonStores);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+		 
+		 chocolate = (ImageView) findViewById(R.id.ImageView08);		 
+		 crisps = (ImageView) findViewById(R.id.ImageView03);
+		 popcorn = (ImageView) findViewById(R.id.imageView02);
+		 nachoes = (ImageView) findViewById(R.id.ImageView04);
+		 sweets = (ImageView) findViewById(R.id.ImageView02);
+		 jellies = (ImageView) findViewById(R.id.ImageView07);
+
+
+	
+		
+		 jellies.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.jellies, "Jellies", 92, 1,"");	
+	    		  		myList.add(croiss);
+	    		//  		points = (points + 10);
+	    		  		Toast.makeText(Snacks.this, "Jellies added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 sweets.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.sweeties, "Sweets", 91, 1,"");	
+	    		  		myList.add(croiss);
+	    		//  		points = (points + 10);
+	    		  		Toast.makeText(Snacks.this, "Sweets added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 nachoes.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.nachoes, "Nachos", 90, 1,"");	
+	    		  		myList.add(croiss);
+	    		  //		points = (points + 10);
+	    		  		Toast.makeText(Snacks.this, "Nachos added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 popcorn.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    		  		StoreItem rolls = new StoreItem(R.drawable.popcorn, "Popcorn", 89, 1,"");	
+	    		  		myList.add(rolls);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(Snacks.this, "Popcorn added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 crisps.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.crisps, "Crisps", 88, 1,"");	
+	    		  		myList.add(croiss);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(Snacks.this, "Crisps added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   chocolate.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem brownbread = new StoreItem(R.drawable.chocolate, "Chocolate", 87, 1,"");	
+	    		  		myList.add(brownbread);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(Snacks.this, "Chocolate added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+	 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			Intent in = new Intent(Snacks.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			 in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+
+	}
+}

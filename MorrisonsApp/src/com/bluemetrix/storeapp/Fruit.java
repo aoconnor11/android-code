@@ -1,0 +1,181 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Fruit extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView apple;
+	private ImageView banana;
+	private ImageView blueberries;
+	private ImageView melon;
+	private ImageView orange;
+	private ImageView strawberry;
+	private int points;
+	
+	//Quantity
+	private int appleCount = 0;
+	private int bananaCount = 0;
+	private int blueberriesCount = 0;
+	private int melonCount = 0;
+	private int orangeCount = 0;
+	private int strawberryCount = 0;
+	private StoreItem appleItem;
+	private StoreItem bananaItem;
+	private StoreItem blueberriesItem;
+	private StoreItem melonItem;
+	private StoreItem orangeItem;
+	private StoreItem strawberryItem;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.fruit);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+	
+		 apple = (ImageView) findViewById(R.id.ImageView08);		 
+		 banana = (ImageView) findViewById(R.id.ImageView03);
+		 blueberries = (ImageView) findViewById(R.id.imageView02);
+		 melon = (ImageView) findViewById(R.id.ImageView04);
+		 orange = (ImageView) findViewById(R.id.ImageView02);
+		 strawberry = (ImageView) findViewById(R.id.ImageView07);
+		 
+		 
+		 strawberry.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				strawberryCount++;
+	    		  		strawberryItem = new StoreItem(R.drawable.strawberry, "Strawberry", 32,strawberryCount, "");	
+	    		  		Toast.makeText(Fruit.this, "Strawberries added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 orange.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				orangeCount++;
+	    		  		orangeItem = new StoreItem(R.drawable.orange, "Oranges", 31, orangeCount,"");	
+	    		  		Toast.makeText(Fruit.this, "Oranges added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 melon.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				melonCount++;
+	    		  		melonItem = new StoreItem(R.drawable.melon, "Melon", 30, melonCount,"");	
+	    		  		Toast.makeText(Fruit.this, "Melon added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 blueberries.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				blueberriesCount++;
+	    		  		blueberriesItem = new StoreItem(R.drawable.blueberries, "Blueberries", 29, blueberriesCount,"");	
+	    		  		Toast.makeText(Fruit.this, "Blueberries added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 banana.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				bananaCount++;
+	    		  		bananaItem = new StoreItem(R.drawable.banana, "Bananas", 28, bananaCount,"");	
+	    		  		Toast.makeText(Fruit.this, "Bananas added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   apple.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				appleCount++;
+	    		  		appleItem = new StoreItem(R.drawable.apple, "Apples", 27, appleCount,"");	
+	    		  		Toast.makeText(Fruit.this, "Apples added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+
+		 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			
+	    			//add items to shopping list - only if quantity larger than 0
+	    			 if(appleCount!=0){	 
+	    				 myList.add(appleItem);
+	    			 }
+	    			 if(bananaCount!=0){	 
+	    				 myList.add(bananaItem);
+	    			 }
+	    			 if(melonCount!=0){	 
+	    				 myList.add(melonItem);
+	    			 }
+	    			 if(appleCount!=0){	 
+	    				 myList.add(appleItem);
+	    			 }
+	    			 if(orangeCount!=0){	 
+	    				 myList.add(orangeItem);
+	    			 }
+	    			 if(strawberryCount!=0){	 
+	    				 myList.add(strawberryItem);
+	    			 }
+	    			
+	    			
+	    			
+	    			
+	    			
+	    			Intent in = new Intent(Fruit.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+		 
+	
+	
+	}
+}

@@ -1,0 +1,125 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class DryFoods extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView pasta;
+	private ImageView noodles;
+	private ImageView rice;
+	private int points;
+	
+	private int pastaCount = 0;
+	private int noodlesCount = 0;
+	private int riceCount = 0;
+	private StoreItem pastaItem;
+	private StoreItem noodlesItem;
+	private StoreItem riceItem;
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.dry_foods);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		// store = (Button) findViewById(R.id.buttonStores);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+	
+		 pasta = (ImageView) findViewById(R.id.ImageView08);		 
+		 noodles = (ImageView) findViewById(R.id.ImageView03);
+		 rice = (ImageView) findViewById(R.id.imageView02);
+
+
+		 rice.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				riceCount++;
+	    		  		riceItem = new StoreItem(R.drawable.rice, "Rice", 86, riceCount, "");	
+	    		  		Toast.makeText(DryFoods.this, "Rice added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 noodles.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				noodlesCount++;
+	    		  		noodlesItem = new StoreItem(R.drawable.noodles, "Noodles", 85, noodlesCount, "");	
+	    		  		Toast.makeText(DryFoods.this, "Noodles added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   pasta.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				pastaCount++;
+	    		  		pastaItem = new StoreItem(R.drawable.pasta, "Pasta", 84, pastaCount, "");	
+	    		  		Toast.makeText(DryFoods.this, "Pasta added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+
+		 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			
+	    			if(pastaCount!=0){	 
+	    				 myList.add(pastaItem);
+	    			 }
+	    			if(noodlesCount!=0){	 
+	    				 myList.add(noodlesItem);
+	    			 }
+	    			if(riceCount!=0){	 
+	    				 myList.add(riceItem);
+	    			 }
+	    			
+	
+	    			
+	    			Intent in = new Intent(DryFoods.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			 in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+		 
+	
+	
+	}
+}

@@ -1,0 +1,230 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class GreenGrocer extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView broccoli;
+	private ImageView cabbage;
+	private ImageView carrots;
+	private ImageView cucumber;
+	private ImageView greenbeans;
+	private ImageView lettuce;
+	private ImageView mushrooms;
+	private ImageView potatoe;
+	private ImageView onion;
+	private ImageView tomato;
+	private ImageView spinnach;
+	private int points;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.vegetables);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		// store = (Button) findViewById(R.id.buttonStores);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+	
+		 broccoli = (ImageView) findViewById(R.id.ImageView08);		 
+		 cabbage = (ImageView) findViewById(R.id.ImageView03);
+		 carrots = (ImageView) findViewById(R.id.imageView02);
+		 cucumber = (ImageView) findViewById(R.id.ImageView04);
+		 greenbeans = (ImageView) findViewById(R.id.ImageView02);
+		 lettuce = (ImageView) findViewById(R.id.ImageView07);
+		mushrooms = (ImageView) findViewById(R.id.ImageView06);
+		potatoe = (ImageView) findViewById(R.id.ImageView17);
+		onion = (ImageView) findViewById(R.id.ImageView01);
+		tomato = (ImageView) findViewById(R.id.ImageView11);
+		spinnach = (ImageView) findViewById(R.id.ImageView10);
+		
+		 tomato.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.tomatoe, "Tomatoes", 43,1, "");	
+	    		  		myList.add(croiss);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Tomatoes added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		
+		 spinnach.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.spinnach, "Spinach", 42,1, "");	
+	    		  		myList.add(croiss);
+	    		//  		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Spinach added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		
+		 potatoe.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.potatoe, "Potatoes", 41, 1,"");	
+	    		  		myList.add(croiss);
+	    		 // 		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Potatoes added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 onion.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.onion, "Onions", 40, 1,"");	
+	    		  		myList.add(croiss);
+	    		 // 		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Onions added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 mushrooms.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.mushrooms, "Mushrooms", 39, 1,"");	
+	    		  		myList.add(croiss);
+	    		//  		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Mushrooms added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		
+		 lettuce.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.lettuce, "Lettuce", 38, 1,"");	
+	    		  		myList.add(croiss);
+	    		 // 		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Lettuce added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 greenbeans.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.greenbeans, "Green Beans", 37, 1,"");	
+	    		  		myList.add(croiss);
+	    		 // 		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Green beans added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 cucumber.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.cucumber, "Cucumber", 36, 1,"");	
+	    		  		myList.add(croiss);
+	    		  //		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Cucumber added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 carrots.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem rolls = new StoreItem(R.drawable.carrots, "Carrots", 35, 1,"");	
+	    		  		myList.add(rolls);
+	    		  //		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Carrots added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 cabbage.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.cabbage, "Cabbage", 34, 1,"");	
+	    		  		myList.add(croiss);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Cabbage added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   broccoli.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem brownbread = new StoreItem(R.drawable.broccoli, "Broccoli", 33,1, "");	
+	    		  		myList.add(brownbread);
+	    		  //		points = (points + 10);
+	    		  		Toast.makeText(GreenGrocer.this, "Broccoli added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+
+		 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			Intent in = new Intent(GreenGrocer.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			 in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+		 
+	
+	
+	}
+}

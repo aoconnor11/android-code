@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background" >
+    
+    
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/imageViewHair1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+         android:layout_marginTop="40dp"  
+        android:src="@drawable/slphair" />
+
+    <ImageView
+        android:id="@+id/imageViewLondon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageViewHair1"
+         android:layout_marginTop="40dp"  
+        android:layout_below="@+id/imageViewHair1"
+        android:src="@drawable/slplondon" />
+
+    <ImageView
+        android:id="@+id/imageViewParis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageViewLondon"
+         android:layout_marginTop="40dp"  
+        android:layout_below="@+id/imageViewLondon"
+        android:src="@drawable/slpparis" />
+
+    <TextView
+        android:id="@+id/textViewHairSalon"
+        android:layout_marginTop="10dp"  
+        android:layout_marginRight="10dp"  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageViewHair1"
+        android:layout_alignTop="@+id/imageViewHair1"
+         android:textColor="#ffffff"
+        android:text="Hair Salon" />
+
+    <TextView
+        android:id="@+id/textViewParis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"  
+        android:layout_marginRight="10dp"  
+        android:layout_alignRight="@+id/imageViewParis"
+        android:layout_alignTop="@+id/imageViewParis"
+         android:textColor="#ffffff"
+        android:text="Paris Collection" />
+
+    <TextView
+        android:id="@+id/textViewLondon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"  
+        android:layout_marginRight="10dp"  
+        android:layout_alignRight="@+id/imageViewLondon"
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/imageViewLondon"
+        android:text="London Collection" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/help_77798" />
+
+    </RelativeLayout>
+
+</LinearLayout>

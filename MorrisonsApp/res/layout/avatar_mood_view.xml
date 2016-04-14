@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+    <!--
+   android:src="@drawable/torso1" 
+   android:layout_marginBottom="9dp"
+    -->
+
+
+    <!--
+    android:src="@drawable/torso1"
+    
+    128dp - size of hair etc.
+    -->
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="90dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:layout_marginTop="90dp" >
+
+        <ImageView
+            android:id="@+id/imageViewAvatarMood2"
+            android:layout_width="460dp"
+            android:layout_height="510dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/head1" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageViewAvatarMood6"
+        android:layout_width="850dp"
+        android:layout_height="850dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-21dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/nose1" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatarMood5"
+        android:layout_width="850dp"
+        android:layout_height="850dp"
+        android:layout_alignLeft="@+id/imageViewAvataMood2"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-23dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/eyes3" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatarMood7"
+        android:layout_width="850dp"
+        android:layout_height="850dp"
+  
+        android:layout_marginLeft="-21dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/mouth3" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatarMood3"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/hair1" />
+
+    <!--
+   <ImageView
+        android:id="@+id/imageViewAvatarMood6"
+        android:layout_width="850dp"
+        android:layout_height="850dp"
+        android:layout_alignLeft="@+id/imageViewAvatar2"  
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="-21dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/nose1" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatarMood5"
+        android:layout_width="850dp"
+        android:layout_height="850dp"
+        android:layout_marginLeft="-23dp"
+        android:layout_alignLeft="@+id/imageViewAvatar2"
+         android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/eyes3" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatarMood7"
+        android:layout_width="850dp"
+        android:layout_height="850dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="-21dp"
+   android:layout_alignLeft="@+id/imageViewAvatar2"
+        android:src="@drawable/mouth3" />
+    <ImageView
+        android:id="@+id/imageViewAvatarMood3"
+        android:layout_width="850dp"
+        android:layout_height="850dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/hair1" />
+    -->
+
+    <Button
+        android:id="@+id/buttonAvatarMoodDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/roundbutton2"
+        android:text="done" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/help_77798" />
+
+    <RelativeLayout
+        android:id="@+id/relLayoutMouth"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+       
+        android:layout_alignBottom="@+id/relativeLayout1"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="-40dp"
+        android:layout_toLeftOf="@+id/imageView1" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutNose"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/relLayoutMouth"
+        android:layout_alignLeft="@+id/relLayoutMouth"
+   >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relLayoutEyes"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/relLayoutNose"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_marginBottom="32dp"
+        >
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+ 
+    <WebView 
+    android:id="@+id/webView1"
+    android:layout_width="fill_parent"
+    android:layout_height="250dp"
+/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+      		  android:layout_alignParentLeft="true"
+        		android:layout_alignParentRight="true"
+        	android:layout_below="@+id/webView1" 
+           android:background="@drawable/backgroundyellow" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="21.37"
+             >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="18sp"
+                    android:layout_weight="21.37"
+                    android:text="Spinach &amp; pistachio stuffed lamb breast"
+                    android:textAppearance="?android:attr/textAppearanceLarge" 
+                    android:background="@color/white"/>
+                
+                 <LinearLayout
+        android:id="@+id/linearLayoutRecipe"
+        android:layout_width="fill_parent"
+        android:layout_height="380dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+         android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/roundbutton2"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignBottom="@+id/linearLayoutRecipe"
+                    android:layout_alignLeft="@+id/linearLayoutRecipe"
+                    android:layout_alignRight="@+id/linearLayoutRecipe"
+                    android:layout_alignTop="@+id/linearLayoutRecipe"
+                    android:layout_below="@+id/textView1"
+                    android:paddingTop="10dp" >
+                    
+                       <RelativeLayout
+                           android:id="@+id/relativeLayout1"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent" >
+
+                           <TextView
+                               android:id="@+id/textView2"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_alignParentTop="true"
+                               android:layout_centerHorizontal="true"
+                               android:text="Ingredients"
+                               android:textColor="@color/red"
+                               android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                           <TextView
+                               android:id="@+id/textView3"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView2"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 1 onion, peeled and finely chopped" />
+                           
+                           
+                           <TextView
+                               android:id="@+id/textView4"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView3"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 2 tbsp olive oil" />
+                           
+                           <TextView
+                               android:id="@+id/textView5"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView4"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 2 garlic cloves, peeled and finely chopped" />
+                           
+                           
+                           
+                            <TextView
+                               android:id="@+id/textView6"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView5"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 150g baby spinach leaves" />
+                           
+                             
+                            <TextView
+                               android:id="@+id/textView7"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView6"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 100g fresh breadcrumbs" />
+                            
+                              <TextView
+                               android:id="@+id/textView8"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView7"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 75g pistachios, shelled" />
+                           
+                           <TextView
+                               android:id="@+id/textView9"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView8"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 2 tbsp fresh rosemary, chopped" />
+                           
+                            <TextView
+                               android:id="@+id/textView10"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView9"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 4 tbsp fresh mint, chopped" />
+                            
+                            
+                             <TextView
+                               android:id="@+id/textView11"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView10"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 2 lamb breasts, boned" />
+                             
+                             
+                              <TextView
+                               android:id="@+id/textView12"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView11"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 500g butternut squash, peeled and cubed" />
+                           
+                           <TextView
+                               android:id="@+id/textView13"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView12"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 300g cous cous" />
+                           
+                            <TextView
+                               android:id="@+id/textView14"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView13"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; &#189; tsp turmeric" /><!-- 1/2 fraction -->
+                              
+                               <TextView
+                               android:id="@+id/textView15"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView14"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 600ml hot chicken stock, made from a cube" />
+                              
+                              <TextView
+                               android:id="@+id/textView16"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView15"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; 100g feta, crumbled" />
+                              
+                           
+                             <TextView
+                               android:id="@+id/textView17"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView16"
+                            	android:paddingTop="5dp"
+                               android:layout_centerHorizontal="true"
+                               android:text="Method"
+                               android:textColor="@color/red"
+                               android:textAppearance="?android:attr/textAppearanceMedium" />
+                           
+                             <TextView
+                               android:id="@+id/textView18"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView17"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Heat the oven to 240&#xb0;C/220&#xb0;C fan/Gas 9" />
+                           
+                            <TextView
+                               android:id="@+id/textView19"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView18"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Cook the onion in half the oil until soft" />
+                           
+                             <TextView
+                               android:id="@+id/textView20"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView19"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Add the garlic and cook for 1 minute then add the spinach" />
+                             
+                              <TextView
+                               android:id="@+id/textView21"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView20"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; When it wilts, remove the heat" />
+                              
+                                    <TextView
+                               android:id="@+id/textView22"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView21"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Place the spinach in a bowl and add the breadcrumbs, pistachios, rosemary and half the mint" />
+                              
+                              <TextView
+                               android:id="@+id/textView23"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView22"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Season well and mix" />
+                              
+                              <TextView
+                               android:id="@+id/textView24"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView23"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Lay one lamb breast skin-side down and arrange the stuffing down the centre" />
+                              
+                              <TextView
+                               android:id="@+id/textView25"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView24"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Lay the second breast on top then roll up" />
+                              
+                                    <TextView
+                               android:id="@+id/textView26"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView25"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Secure with string" />
+                              
+                               <TextView
+                               android:id="@+id/textView27"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView26"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Roast for 40 minutes, turning to make sure all sides brown evenly" />
+                              
+                               <TextView
+                               android:id="@+id/textView28"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView27"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Turn the oven down to 200&#xb0;C/180&#xb0;C fan/ Gas 6 and roast for a further 1&#189; hours until cooked through and no pink meat remains" />
+                              
+                              
+                              <TextView
+                               android:id="@+id/textView29"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView28"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; If the lamb starts to brown too much, cover with foil" />
+                              
+                               <TextView
+                               android:id="@+id/textView30"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView29"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Meanwhile, place the squash in a roasting tin, pour over the remaining oil and season" />
+                              
+                              <TextView
+                               android:id="@+id/textView31"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView30"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Roast for 30 minutes then cool slightly" />
+                              
+                                 <TextView
+                               android:id="@+id/textView32"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView31"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Place the cous cous in a bowl with the turmeric, stock and season" />
+                               
+                               <TextView
+                               android:id="@+id/textView33"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView32"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Mix briefly, cover with cling film for 10 minutes, then fluff up with a fork" />
+                               
+                               <TextView
+                               android:id="@+id/textView34"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView33"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Gently stir through the roasted squash, remaining mint and feta" />
+                               
+                                <TextView
+                               android:id="@+id/textView35"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/textView34"
+                               android:paddingTop="5dp"
+                               android:layout_alignParentLeft="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginLeft="15dp"
+                               android:text="&#8226; Allow the lamb to rest for 20 minutes before slicing and serving with the cous cous" />
+
+                           
+                            	<!--  &#189; 1/2        &#xb0; degree-->
+
+                           </RelativeLayout>
+                    
+                  </ScrollView>
+       
+            </RelativeLayout>
+     
+        </LinearLayout>
+  
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <color name="black_overlay">#66000000</color>
+    <color name="black">#000000</color>
+    <color name="oldred">#900</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#339900</color>
+    <color name="blue">#009</color>
+    <color name="white">#FFF</color>
+    <color name="grey">#D8D8D8</color>
+    <color name="yellow">#FFFF00</color>
+    
+</resources>
+<!-- 333366 -->

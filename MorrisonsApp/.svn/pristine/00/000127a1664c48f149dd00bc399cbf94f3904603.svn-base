@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"  
+    android:background="@drawable/background"
+    >
+    
+<RelativeLayout   
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+  <com.bluemetrix.storeapp.avatar.CoverFlow
+      android:id="@+id/coverflow"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true" >
+  </com.bluemetrix.storeapp.avatar.CoverFlow>
+
+  <ImageView
+      android:id="@+id/imageViewCart"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      android:src="@drawable/cart_alternative" />
+
+  <TextView
+      android:id="@+id/textViewCredits"
+      android:layout_width="wrap_content"
+       android:layout_marginTop="20dp"  
+        android:layout_marginLeft="20dp" 
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
+      android:textStyle="bold"
+       android:textColor="#ff1493"
+      android:text="100 Credits"
+      android:textAppearance="?android:attr/textAppearanceLarge" />
+
+  <TextView
+      android:id="@+id/textViewBasket"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"  
+        android:layout_marginRight="20dp" 
+      android:layout_alignParentRight="true"
+      android:textStyle="bold"
+      android:layout_alignParentTop="true"
+       android:textColor="#ff1493"
+      android:text="0 in Basket"
+      android:textAppearance="?android:attr/textAppearanceLarge" />
+
+  <ImageView
+      android:id="@+id/imageView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/help_77798" />
+    
+</RelativeLayout>
+        
+
+</LinearLayout>

@@ -1,0 +1,128 @@
+package com.bluemetrix.storeapp;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.zip.GZIPInputStream;
+
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.CookieStore;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCookieStore;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.os.AsyncTask;
+
+public class LogIn extends AsyncTask<Void, Void, String>{
+	String myCookie = "username=bmjp";
+	String wurl = "http://84.39.235.135:45927/account/login/";
+	
+//	DefaultHttpClient httpclient = new DefaultHttpClient();
+	//HttpPost httppostreq = new HttpPost(wurl);
+	
+	JSONObject log = new JSONObject();
+	String resultstring;
+	
+	CookieStore cookieStore = new BasicCookieStore();
+
+	@Override
+	protected String doInBackground(Void... level) 
+	{	DefaultHttpClient httpclient = new DefaultHttpClient();
+	HttpPost httppostreq = new HttpPost(wurl);
+	
+		try {
+			log.put("username", "bmjp");
+			log.put("password", "sh!njuku");
+			
+			
+			StringEntity se;
+			try {
+				se = new StringEntity("data=" + log.toString());
+				httppostreq.setEntity(se);
+				
+				
+				//httppostreq.setHeader(HTTP.CONTENT_TYPE, "application/json");
+				 httppostreq.setHeader("Accept", "application/json");
+				 httppostreq.setHeader("Content-type", "application/json");
+				
+				
+			//	se.setContentType("application/json;charset=UTF-8");
+			//	se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, "application/json;charset=UTF-8"));
+			
+				
+				try {
+					HttpResponse httpresponse = StoreList.httpClient.execute(httppostreq);
+					
+					
+					System.out.println("json " + log.toString());
+					
+					HttpEntity resultentity = httpresponse.getEntity();
+					InputStream inputstream = resultentity.getContent();
+					Header contentencoding = httpresponse.getFirstHeader("Content-Encoding");
+					if(contentencoding != null && contentencoding.getValue().equalsIgnoreCase("gzip")) {
+						inputstream = new GZIPInputStream(inputstream);
+					}
+					resultstring = convertStreamToString(inputstream);
+					inputstream.close();
+					resultstring = resultstring.substring(1,resultstring.length()-1);
+					
+					
+					
+				} catch (ClientProtocolException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return resultstring;
+		
+	}
+	
+	protected void onPostExecute(String result) 
+	{
+		resultstring = result; 
+     }
+	
+	
+	
+	
+	
+
+	
+	private String convertStreamToString(InputStream is) {
+	    String line = "";
+	    StringBuilder total = new StringBuilder();
+	    BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+	    try {
+	        while ((line = rd.readLine()) != null) {
+	            total.append(line);
+	        }
+	    } catch (Exception e) {
+	  //  Toast.makeText(this, "Stream Exception", Toast.LENGTH_SHORT).show();
+	    }
+	return total.toString();
+	}
+}
+
+	

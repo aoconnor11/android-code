@@ -1,0 +1,186 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Drinks extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView coffee;
+	private ImageView cola;
+	private ImageView fruitjuice;
+	private ImageView orangejuice;
+	private ImageView tea;
+	private ImageView water;
+	private int points;
+	
+	private int coffeeCount = 0;
+	private int colaCount = 0;
+	private int fruitjuiceCount = 0;
+	private int orangejuiceCount = 0;
+	private int teaCount = 0;
+	private int waterCount = 0;
+	private StoreItem coffeeItem;
+	private StoreItem colaItem;
+	private StoreItem fruitjuiceItem;
+	private StoreItem orangejuiceItem;
+	private StoreItem teaItem;
+	private StoreItem waterItem;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.drinks);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		// store = (Button) findViewById(R.id.buttonStores);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+	
+		 coffee = (ImageView) findViewById(R.id.ImageView08);		 
+		 cola = (ImageView) findViewById(R.id.ImageView03);
+		 fruitjuice = (ImageView) findViewById(R.id.imageView02);
+		 orangejuice = (ImageView) findViewById(R.id.ImageView04);
+		 tea = (ImageView) findViewById(R.id.ImageView02);
+		 water = (ImageView) findViewById(R.id.ImageView07);
+
+
+		
+		 water.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				waterCount++;
+	    		  		waterItem = new StoreItem(R.drawable.water, "Water", 74, waterCount, "");	
+	    		  		Toast.makeText(Drinks.this, "Water added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 tea.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				teaCount++;
+	    		  		teaItem = new StoreItem(R.drawable.tea, "Tea", 73, teaCount, "");	
+	    		  		Toast.makeText(Drinks.this, "Tea added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 orangejuice.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				orangejuiceCount++;
+	    		  		orangejuiceItem = new StoreItem(R.drawable.orangejuice, "Orange Juice", 72, orangejuiceCount, "");	
+	    		  		Toast.makeText(Drinks.this, "Orange juice added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 fruitjuice.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				fruitjuiceCount++;
+	    		  		fruitjuiceItem = new StoreItem(R.drawable.fruitjuice, "Juice", 71, fruitjuiceCount, "");	
+	    		  		Toast.makeText(Drinks.this, "Fruit juice added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 cola.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				colaCount++;
+	    		  		colaItem = new StoreItem(R.drawable.cola, "Cola", 70, colaCount, "");	
+	    		  		Toast.makeText(Drinks.this, "Cola added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   coffee.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				coffeeCount++;
+	    		  		coffeeItem = new StoreItem(R.drawable.coffee, "Coffee", 69, coffeeCount, "");	
+	    		  		Toast.makeText(Drinks.this, "Coffee added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 
+		   
+	
+		 
+		 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			
+	    			
+	    			if(coffeeCount!=0){	 
+	    				 myList.add(coffeeItem);
+	    			 }
+	    			if(fruitjuiceCount!=0){	 
+	    				 myList.add(fruitjuiceItem);
+	    			 }
+	    			if(orangejuiceCount!=0){	 
+	    				 myList.add(orangejuiceItem);
+	    			 }
+	    			if(teaCount!=0){	 
+	    				 myList.add(teaItem);
+	    			 }
+	    			if(colaCount!=0){	 
+	    				 myList.add(colaItem);
+	    			 }
+	    			if(waterCount!=0){	 
+	    				 myList.add(waterItem);
+	    			 }
+	    			
+	    			
+	    			
+	    			
+	    			
+	    			Intent in = new Intent(Drinks.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			 in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+		 
+	
+	
+	}
+}

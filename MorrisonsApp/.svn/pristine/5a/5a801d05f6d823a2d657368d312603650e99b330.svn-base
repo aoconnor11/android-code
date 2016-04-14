@@ -1,0 +1,13 @@
+Morrisons App - demo version - not all features enabled.
+
+Libraries it uses: 
+-	Action Bar Sherlock 	-  http://actionbarsherlock.com/
+- 	WScratchView		-  https://github.com/winsontan520/Android-WScratchView
+
+
+The following features have been developed:
+- Shopping List
+- Avatar (same as SLP)
+- Scratch Card
+
+Similar to iPhone version.

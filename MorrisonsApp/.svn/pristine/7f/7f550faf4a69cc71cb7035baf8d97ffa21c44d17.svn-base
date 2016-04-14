@@ -1,0 +1,83 @@
+package com.bluemetrix.storeapp;
+
+
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.bluemetrix.scratchcard.ScratchCard;
+import com.bluemetrix.storeapp.avatar.AvatarHomePage;
+
+import android.net.Uri;
+import android.os.Bundle;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+
+
+public class HomePage extends Activity {
+	
+	private Button shoppingList;
+	private int option;//make sure empty list
+	private int userID;
+	private Button openAvatar;
+	private Button scratch;
+	private int points;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_home_page);
+
+		option = 1;//blank list
+		userID = 2;//user 2 - (user 1 = iPhone)
+
+		 Intent in = getIntent();
+	       // option = in.getIntExtra("option", 1);
+	        points = in.getIntExtra("points", 0);
+
+		System.out.println("Points " + points);
+		
+		shoppingList = (Button) findViewById(R.id.ButtonShoppingList);
+		openAvatar = (Button) findViewById(R.id.ButtonCoupons);	
+		scratch = (Button) findViewById(R.id.ButtonWeeklyPromotions);	
+		
+		scratch.setOnClickListener(new View.OnClickListener() 
+		{
+			public void onClick(View view) 
+		    {             	
+		       	Intent in = new Intent(HomePage.this, ScratchCard.class);
+				in.putExtra("option", option);
+				in.putExtra("points", points);
+				in.putExtra("user", userID);
+				startActivity(in);
+		   	}
+		});
+		
+				shoppingList.setOnClickListener(new View.OnClickListener() 
+				{
+					public void onClick(View view) 
+				    {             	
+				       	Intent in = new Intent(HomePage.this, ShoppingList.class);
+						in.putExtra("option", option);
+						in.putExtra("points", points);
+						in.putExtra("user", userID);
+						startActivity(in);
+				   	}
+				});
+							
+				
+				openAvatar.setOnClickListener(new View.OnClickListener() 
+				{
+					public void onClick(View view) 
+				    {             	
+						Intent in = new Intent(HomePage.this, AvatarHomePage.class);
+						in.putExtra("option", option);
+						in.putExtra("points", points);//get points from shopping list
+						in.putExtra("user", userID);
+						startActivity(in);
+			   	}
+				});	
+	}
+}

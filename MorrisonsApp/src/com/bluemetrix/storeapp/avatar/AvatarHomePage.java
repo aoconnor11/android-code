@@ -1,0 +1,174 @@
+package com.bluemetrix.storeapp.avatar;
+
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+import com.bluemetrix.storeapp.HomePage;
+import com.bluemetrix.storeapp.R;
+import com.bluemetrix.storeapp.ShoppingList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class AvatarHomePage extends SherlockActivity {
+
+
+	private ImageView hanger;
+	private ImageView hangerPlus;
+	private ImageView mood;
+	int optionNew;
+	int legsOption;
+	int torsoOption;
+	int hairOption;
+	int noseOption;
+	int eyesOption;
+	int mouthOption;
+	int option;
+	int points;
+	private TextView displayPoints;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.avatar_layout);
+	
+		ActionBar actionBar = getSupportActionBar();
+	    actionBar.setDisplayHomeAsUpEnabled(true);
+		Intent i = getIntent();
+		option = i.getIntExtra("option", 1);	
+		points = i.getIntExtra("points", 45);//default - 0 points
+		torsoOption = i.getIntExtra("torsoID", -1);
+		hairOption = i.getIntExtra("hairID", -1);
+		legsOption = i.getIntExtra("legsID", -1);
+		eyesOption = i.getIntExtra("eyesID", -1);
+		mouthOption = i.getIntExtra("mouthID", -1);
+		noseOption = i.getIntExtra("noseID", -1);
+		
+		ImageView torsoImage = (ImageView) findViewById(R.id.imageViewAvatarMenu1);	
+		ImageView legsImage = (ImageView) findViewById(R.id.imageViewAvatarMenu4);	
+		ImageView hairImage = (ImageView) findViewById(R.id.imageViewAvatarMenu3);	
+		ImageView noseImage = (ImageView) findViewById(R.id.imageViewAvatarMenu6);
+		ImageView eyesImage = (ImageView) findViewById(R.id.imageViewAvatarMenu5);
+		ImageView mouthImage = (ImageView) findViewById(R.id.imageViewAvatarMenu7);
+		ImageView avatarHelp = (ImageView) findViewById(R.id.imageView1);
+		System.out.println("points " + points);
+		
+		displayPoints = (TextView) findViewById(R.id.textViewNoPoints);
+
+		displayPoints.setText(points+"");
+		
+		
+	
+	
+		if((torsoOption !=-1)&&(legsOption !=-1) && (hairOption != -1) )
+		{		
+			torsoImage.setImageResource(torsoOption);
+			legsImage.setImageResource(legsOption);
+			hairImage.setImageResource(hairOption);
+		}
+			
+		if((mouthOption !=-1)||(noseOption !=-1) || (eyesOption != -1) )
+		{		
+			mouthImage.setImageResource(mouthOption);
+			noseImage.setImageResource(noseOption);
+			eyesImage.setImageResource(eyesOption);					
+		}
+			
+		if((torsoOption !=-1)&&(legsOption !=-1) && (hairOption != -1) && (noseOption != -1) && (mouthOption != -1) && (eyesOption != -1))
+		{		
+			torsoImage.setImageResource(torsoOption);
+			legsImage.setImageResource(legsOption);
+			hairImage.setImageResource(hairOption);
+			noseImage.setImageResource(noseOption);
+			eyesImage.setImageResource(eyesOption);
+			mouthImage.setImageResource(mouthOption);					
+		}		
+	
+		
+		hanger = (ImageView) findViewById(R.id.hangerImage);	
+		hanger.setDrawingCacheEnabled(true);
+		hanger.setOnClickListener(new View.OnClickListener() 
+		{
+            public void onClick(View view) 
+            {
+            	System.out.println("Hanger");        	
+				Intent in = new Intent(AvatarHomePage.this, MainView.class);
+				  in.putExtra("points", points);
+				in.putExtra("eyesID", R.drawable.eyes3);
+				in.putExtra("noseID", R.drawable.nose1);
+				in.putExtra("mouthID", R.drawable.mouth3);
+				in.putExtra("torsoID", R.drawable.torso1);
+				in.putExtra("legsID", R.drawable.legs1);
+				in.putExtra("hairID", R.drawable.hair1);
+				startActivity(in);          	
+           	}
+        }); 
+		
+		hangerPlus = (ImageView) findViewById(R.id.hangerPlusImage);
+		hangerPlus.setDrawingCacheEnabled(true);
+		hangerPlus.setOnClickListener(new View.OnClickListener() 
+		{
+            public void onClick(View view) 
+            {
+            	System.out.println("Hanger Plus");      	
+				Intent in = new Intent(AvatarHomePage.this, ShopsView.class);
+				  in.putExtra("points", points);
+				in.putExtra("eyesID", eyesOption);
+				in.putExtra("noseID", noseOption);
+				in.putExtra("mouthID", mouthOption);
+				startActivity(in);       	
+           	}
+        }); 
+		
+			
+		
+		
+		avatarHelp.setDrawingCacheEnabled(true);
+		avatarHelp.setOnClickListener(new View.OnClickListener() 
+		{
+            public void onClick(View view) 
+            {
+            	
+            	   Intent in = new Intent(AvatarHomePage.this, AvatarHelp.class);
+            	   in.putExtra("option", 1);
+            	   in.putExtra("points", points);
+    			startActivity(in); 
+    			overridePendingTransition(R.anim.bottom_slide_in, R.anim.bottom_slide_out);
+           	}
+        }); 
+		
+		
+
+	
+	
+	
+	
+	
+	}
+	
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+
+	    case android.R.id.home:
+	    	
+	         // Do whatever you want, e.g. finish()
+	    	Intent intent = new Intent(this, HomePage.class);
+	    	   intent.putExtra("points", points);
+	        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	        startActivity(intent);
+	    	
+	    	return true;
+	    	
+	    default:
+	        return super.onOptionsItemSelected(item);	
+	   
+	    }
+	}
+}

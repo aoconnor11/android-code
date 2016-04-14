@@ -1,0 +1,188 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Butcher extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView bacon;
+	private ImageView chicken;
+	private ImageView ham;
+	private ImageView lamb;
+	private ImageView porkchops;
+	private ImageView roastbeef;
+	private ImageView sausages;
+	private ImageView steak;
+	private int points;
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.meat_poultry);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		// store = (Button) findViewById(R.id.buttonStores);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+	
+		 bacon = (ImageView) findViewById(R.id.ImageView08);		 
+		 chicken = (ImageView) findViewById(R.id.ImageView03);
+		 ham = (ImageView) findViewById(R.id.imageView02);
+		 lamb = (ImageView) findViewById(R.id.ImageView04);
+		 porkchops = (ImageView) findViewById(R.id.ImageView02);
+		 roastbeef = (ImageView) findViewById(R.id.ImageView07);
+		sausages = (ImageView) findViewById(R.id.ImageView06);
+		steak = (ImageView) findViewById(R.id.ImageView01);
+		
+
+		 
+		 steak.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.steak, "Steak", 51,1, "");	
+	    		  		myList.add(croiss);
+	    		  		//points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Steak added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 sausages.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.sausages, "Sausages", 50, 1,"");	
+	    		  		myList.add(croiss);
+	    		 // 		points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Sausages added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		
+		 roastbeef.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.roastbeef, "Roast Beef", 49,1, "");	
+	    		  		myList.add(croiss);
+	    		//  		points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Roast beef added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 porkchops.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.porkchops, "Pork", 48, 1,"");	
+	    		  		myList.add(croiss);
+	    		//  		points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Pork chops added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 lamb.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.lambchops, "Lamb Chops", 47,1, "");	
+	    		  		myList.add(croiss);
+	    		//  		points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Lamb chops added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 ham.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem rolls = new StoreItem(R.drawable.ham, "Ham", 46, 1,"");	
+	    		  		myList.add(rolls);
+	    		  //		points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Ham added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 chicken.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.chicken, "Chicken", 45,1, "");	
+	    		  		myList.add(croiss);
+	    		  //		points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Chicken added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   bacon.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem brownbread = new StoreItem(R.drawable.bacon, "Bacon", 44,1, "");	
+	    		  		myList.add(brownbread);
+	    		  //		points = (points + 10);
+	    		  		Toast.makeText(Butcher.this, "Bacon added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+
+		 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			Intent in = new Intent(Butcher.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			 in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+		 
+	
+	
+	}
+}

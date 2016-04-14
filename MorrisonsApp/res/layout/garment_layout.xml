@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/page" >
+
+        <ImageView
+            android:id="@+id/imageViewGarment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/storetorso1" />
+
+        <TextView
+            android:id="@+id/textViewGarmentpoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageViewGarment"
+            android:layout_marginBottom="34dp"
+            android:layout_toRightOf="@+id/imageViewGarment"
+            android:text="20 pts"
+            android:textColor="#708090"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/textViewGarmentpoints"
+            android:layout_alignTop="@+id/imageViewGarment"
+            android:text="+"
+            android:textColor="#708090"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

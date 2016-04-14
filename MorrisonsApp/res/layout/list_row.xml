@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="horizontal"
+    android:padding="5dip">
+    
+    
+     <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dip"> 
+  
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:src="@drawable/apple"/> 
+  
+    </LinearLayout>
+
+      <TextView
+          android:id="@+id/offerList"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/title"
+          android:layout_below="@+id/title"
+          android:gravity="right"
+          android:text="Offer"
+          android:textColor="@color/red"
+          android:textSize="15dip"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/thumbnail"
+          android:layout_marginTop="8dp"
+          android:layout_toRightOf="@+id/thumbnail"
+          android:text="Apple"
+          android:textColor="#040404"
+          android:textSize="20dip"
+          android:textStyle="bold"
+          android:typeface="sans" />
+      
+
+      <ImageView
+          android:id="@+id/ImageViewYouTube"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentTop="true"
+          android:src="@drawable/info" />
+
+      <Button
+          android:id="@+id/delete"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignRight="@+id/ImageViewYouTube"
+          android:layout_alignTop="@+id/ImageViewYouTube"
+          android:text="Delete" />
+
+</RelativeLayout>

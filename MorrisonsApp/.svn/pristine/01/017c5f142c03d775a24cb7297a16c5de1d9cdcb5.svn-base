@@ -1,0 +1,146 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class BeerWine extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView beer;
+	private ImageView cider;
+	private ImageView cocktail;
+	private ImageView whiskey;
+	private ImageView wine;
+	private int points;
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.beer_wine);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		// store = (Button) findViewById(R.id.buttonStores);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+		 
+		 beer = (ImageView) findViewById(R.id.ImageView08);		 
+		 cider = (ImageView) findViewById(R.id.ImageView03);
+		 cocktail = (ImageView) findViewById(R.id.imageView02);
+		 whiskey = (ImageView) findViewById(R.id.ImageView04);
+		 wine = (ImageView) findViewById(R.id.ImageView02);
+
+		
+
+
+		 
+		 wine.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.wine, "Wine", 79,1, "");	
+	    		  		myList.add(croiss);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(BeerWine.this, "Wine added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 whiskey.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.whiskey, "Whiskey", 78,1, "");	
+	    		  		myList.add(croiss);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(BeerWine.this, "Whiskey added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 cocktail.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem rolls = new StoreItem(R.drawable.cocktail, "Cocktails", 77,1, "");	
+	    		  		myList.add(rolls);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(BeerWine.this, "Cocktail added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 cider.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem croiss = new StoreItem(R.drawable.cider, "Cider", 76,1, "");	
+	    		  		myList.add(croiss);
+	    		  		//points = (points + 10);
+	    		  		Toast.makeText(BeerWine.this, "Cider added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   beer.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	
+	    		  		StoreItem brownbread = new StoreItem(R.drawable.beer, "Beer", 75,1, "");	
+	    		  		myList.add(brownbread);
+	    		  	//	points = (points + 10);
+	    		  		Toast.makeText(BeerWine.this, "Beer added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+
+		 
+		 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			Intent in = new Intent(BeerWine.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			 in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+		 
+	
+	
+	}
+}

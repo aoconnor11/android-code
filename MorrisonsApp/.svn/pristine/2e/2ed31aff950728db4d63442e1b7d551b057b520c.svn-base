@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Morrisons</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    	<string name="garmentTag">garmentTag</string>
+    
+       <!-- Help pages -->
+	<string name="x">X</string>
+	<string name="helpProfile">Profile Help</string>
+    <string name="helpProfileText">
+        Click on any button to access its functions i.e. click on messages to get access to your messages, etc.
+        </string>
+    
+    
+    <string name="avatarHelp">Avatar Help</string>
+    <string name="avatarHelpText">
+        Click on Mood to change the Face of your Avatar. Your Mood will appear in all messages that you send.
+       \n \nClick on Wardrobe to access clothes you have already purchased, and to change the clothes and hair items on your Avatar.
+       \n \nClick on Shop to try out and purchase new clothes for your Avatar.
+</string>
+     <string name="avatarHelpMoodText">
+        Swipe the eyes to change the eyes on your face.
+      \n  \nSwipe the nose to change the nose on your face.
+       \n \nSwipe the mouth to change the mouth on your face.
+</string>
+<string name="avatarHelpSwipeText">
+        Swipe the hair to change your hair style.
+      \n  \nSwipe the top to change your top.
+       \n \nSwipe the bottom to change your pants/dress.
+</string>
+
+     <string name="avatarStoreHelp">Avatar Store Help</string>
+    <string name="avatarStoreHelpText">
+        Select a store to purchase products from.
+</string>
+<string name="avatarCoverflowText">
+        Slide through the viewer to see the different items for sale in the shop.
+       \n \nClick on the item to turn it around and see background data on the item.
+       \n \nClick on the \" ... \" button to put the item into your \"Changing Room\" to try on at a later stage.
+       \n \nClick in the \">>>\" button to access the changing room.
+</string>
+<string name="avatarChangingRoomText">
+        Items have been added to your wardrobe.
+      \n  \nSwipe to try out items with your wardrobe.
+       \n \nClick on \" ... \" to go to the checkout and purchase items.
+</string>
+
+</resources>

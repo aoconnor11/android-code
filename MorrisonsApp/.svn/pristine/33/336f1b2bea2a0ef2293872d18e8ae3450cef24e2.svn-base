@@ -1,0 +1,322 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+
+import org.json.JSONObject;
+
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+import com.bluemetrix.storeapp.SwipeListView.SwipeListViewCallback;
+
+
+
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
+
+public class ShoppingList extends SherlockActivity //implements SwipeListViewCallback
+{
+
+	Button clearList;
+	Button items;
+	Button store;
+	Button pickUp;
+	private int option;//make sure empty list
+	private int userID;
+	private ArrayList<StoreItem> basket;
+	private ArrayList<StoreItem> sortedbasket;
+	private ListView list;
+	private LazyAdapter lazy;
+	final Context context = this;
+	private int points;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.shopping_list_layout);
+		
+		ActionBar actionBar = getSupportActionBar();
+	    actionBar.setDisplayHomeAsUpEnabled(true);
+		
+		clearList = (Button) findViewById(R.id.buttonClearList);
+		items = (Button) findViewById(R.id.buttonItems);
+		store = (Button) findViewById(R.id.buttonStores);
+		pickUp = (Button) findViewById(R.id.buttonPickUp);
+		
+	//	sortedbasket = new ArrayList<StoreItem>();
+        Intent in = getIntent();
+        option = in.getIntExtra("option", 1);
+        points = in.getIntExtra("points", 0);
+        userID = in.getIntExtra("user", 2);
+		
+      
+        
+        System.out.println("points " + points);
+        
+        if (option==3){//hide button
+        	 list = (ListView) findViewById(R.id.listViewCheckoutItems);
+        	//  SwipeListView l = new SwipeListView(this, this);
+           //   l.exec();
+       	 basket = getIntent().getParcelableArrayListExtra ("list");
+       	 System.out.println("basket size " + basket.size());
+       	 
+       sortedbasket = new ArrayList<StoreItem>(new HashSet<StoreItem>(basket));
+  
+       	 
+         lazy=new LazyAdapter(sortedbasket, this, 1);           
+         list.setAdapter(lazy);   	
+         
+         
+         list.setOnItemLongClickListener(new OnItemLongClickListener() {
+         	
+             @Override
+             public boolean onItemLongClick(AdapterView<?> parent, View view, int position,
+                     long id) {
+             	// StoreDetails listItem = (StoreDetails) lazy.getItem(position);     
+             	
+             //	basket.remove(position);
+             	lazy.deleteItem(position);
+             	basket.remove(position);
+                 lazy.notifyDataSetChanged();
+                 lazy.notifyDataSetInvalidated();
+             	
+                 return false;
+             }
+         });
+        }
+        	
+       // }
+        
+        
+        
+        
+        
+        
+        
+        if (option==4){//show youtube button - only if offer there
+       	 list = (ListView) findViewById(R.id.listViewCheckoutItems);
+      	 basket = getIntent().getParcelableArrayListExtra ("list");
+      	 System.out.println("basket size " + basket.size());
+     // 	  SwipeListView l = new SwipeListView(this, this);
+     //     l.exec();
+      sortedbasket = new ArrayList<StoreItem>(new HashSet<StoreItem>(basket));
+    	 
+        lazy=new LazyAdapter(sortedbasket, this, 2);           
+        list.setAdapter(lazy);   	
+
+        
+        list.setOnItemLongClickListener(new OnItemLongClickListener() {
+        	
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position,
+                    long id) {
+            	// StoreDetails listItem = (StoreDetails) lazy.getItem(position);     
+            	
+            	lazy.deleteItem(position);
+            	basket.remove(position);
+                lazy.notifyDataSetChanged();
+                lazy.notifyDataSetInvalidated();
+            	
+                return false;
+            }
+        });
+       }
+        
+        
+        
+        
+        
+        
+        if (option==1){
+        	 basket = new ArrayList<StoreItem>();
+        }
+        
+    
+
+        
+        store.setOnClickListener(new OnClickListener() 
+        {
+    		@Override
+    		public void onClick(View v)
+    		{	
+    			Intent in = new Intent(ShoppingList.this, StoreList.class);
+    			
+    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+    			for(int i=0; i<basket.size(); i++){
+    				sendList.add(basket.get(i));
+    			}
+    			
+    			in.putExtra("option", 4);
+    			in.putExtra("points", points);//send points to list
+    		    in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+            	startActivity(in);    			
+    		}
+     });
+        
+        pickUp.setOnClickListener(new OnClickListener() 
+        {
+    		@Override
+    		public void onClick(View v)
+    		{	
+    			Intent in = new Intent(ShoppingList.this, PickUp.class);
+    			
+    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+    			for(int i=0; i<basket.size(); i++){
+    				sendList.add(basket.get(i));
+    			}
+    			
+    			in.putExtra("option", 4);//???
+    			in.putExtra("points", points);//send points to list
+    		    in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+            	startActivity(in);    			
+    		}
+     });
+        
+        
+        
+        
+        
+        items.setOnClickListener(new OnClickListener() 
+        {
+    		@Override
+    		public void onClick(View v)
+    		{	
+    			Intent in = new Intent(ShoppingList.this, StoreCategories.class);
+    			 System.out.println("basket size " + basket.size());
+    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+    			for(int i=0; i<basket.size(); i++){
+    				sendList.add(basket.get(i));
+    			}
+    			in.putExtra("points", points);//send points to list
+    			in.putExtra("option", 2);
+    		    in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+            	startActivity(in);    			
+    		}
+     });
+        
+        
+        
+        
+        
+        
+        
+       clearList.setOnClickListener(new OnClickListener() 
+        {
+    		@Override
+    		public void onClick(View v)
+    		{	
+    			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+    					context);
+    			alertDialogBuilder.setTitle("Alert!");
+    			
+    			// set dialog message
+    			alertDialogBuilder
+    				.setMessage("Do you wish to clear shopping list?")
+    				.setCancelable(false)
+    				.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+    					public void onClick(DialogInterface dialog,int id) {
+    						// if this button is clicked, close
+    						// current activity
+    						Intent in = new Intent(ShoppingList.this, ShoppingList.class);
+    		    			in.putExtra("option", 1);
+    		    			in.putExtra("points", 0);//delete points
+    		            	startActivity(in);    
+    					}
+    				  })
+    				.setNegativeButton("No",new DialogInterface.OnClickListener() {
+    					public void onClick(DialogInterface dialog,int id) {
+    						// if this button is clicked, just close
+    						// the dialog box and do nothing
+    						dialog.cancel();
+    					}
+    				});
+     
+    				// create alert dialog
+    				AlertDialog alertDialog = alertDialogBuilder.create();
+     
+    				// show it
+    				alertDialog.show();
+		
+    		}
+     });
+		
+		
+	}
+	
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+
+	    case android.R.id.home:
+	    	
+	         // Do whatever you want, e.g. finish()
+	    	Intent intent = new Intent(this, HomePage.class);
+	    	intent.putExtra("points", points);//send points to list
+	        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	        startActivity(intent);
+	    	
+	    	return true;
+	    	
+	    default:
+	        return super.onOptionsItemSelected(item);	
+	   
+	    }
+	}
+	
+	/*@Override
+	public ListView getListView() {
+		// TODO Auto-generated method stub
+		return list;
+	}
+	
+	@Override
+	public void onSwipeItem(boolean isRight, int position) {
+		// TODO Auto-generated method stub
+		lazy.onSwipeItem(isRight, position);
+	}
+	
+	@Override
+	public void onItemClickListener(ListAdapter adapter, int position) {
+		// TODO Auto-generated method stub
+
+	}*/
+	
+	public static class ViewHolderPattern {
+		// I added a generic return type to reduce the casting noise in client
+		// code
+		@SuppressWarnings("unchecked")
+		public static <T extends View> T get(View view, int id) {
+			SparseArray<View> viewHolder = (SparseArray<View>) view.getTag();
+			if (viewHolder == null) {
+				viewHolder = new SparseArray<View>();
+				view.setTag(viewHolder);
+			}
+			View childView = viewHolder.get(id);
+			if (childView == null) {
+				childView = view.findViewById(id);
+				viewHolder.put(id, childView);
+			}
+			return (T) childView;
+		}
+	}
+	
+}

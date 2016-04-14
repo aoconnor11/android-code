@@ -1,0 +1,722 @@
+package com.bluemetrix.storeapp.avatar;
+
+import java.util.ArrayList;
+
+import com.actionbarsherlock.app.SherlockActivity;
+import com.bluemetrix.storeapp.R;
+
+
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Menu;
+import android.view.View;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainView extends SherlockActivity
+{
+	ImageView torso;
+	ImageView legs;
+	ImageView hair;
+	ImageView nose;
+	ImageView mouth;
+	ImageView eyes;
+	ImageView shop;
+	ImageView help;
+	int torsoOption;
+	int hairOption;
+	int legsOption;
+	int eyesOption;
+	int mouthOption;
+	int noseOption;
+	
+	int torso1 = (R.drawable.torso1);
+	int torso2 = (R.drawable.torso2);
+	int torso3 = (R.drawable.torso3);
+	int torso4 = (R.drawable.torso4);
+	int torso5 = (R.drawable.torso5);
+	int torso6 = (R.drawable.torso6);
+	int torso7 = (R.drawable.torso7);
+	
+	int legs1 = (R.drawable.legs);
+	int legs2 = (R.drawable.legs1);
+	
+	int hair1 = (R.drawable.hair);
+	int hair2 = (R.drawable.hair1);
+	int hair3 = (R.drawable.hair2);
+	int hair4 = (R.drawable.hair3);
+	int hair5 = (R.drawable.hairf4);
+	int hair6 = (R.drawable.hairf6);
+	int hair7 = (R.drawable.hairf7);
+	
+	int eyes1 = (R.drawable.eyes1);
+	int eyes2 = (R.drawable.eyes2);
+	int eyes3 = (R.drawable.eyes3);
+	
+	int mouth1 = (R.drawable.mouth1);
+	int mouth2 = (R.drawable.mouth2);
+	int mouth3 = (R.drawable.mouth3);
+	int torsoI = 0;
+	int legsI = 0;
+	int hairI = 0;
+	int points;
+	int totalPoints;
+	Button doneButton;
+	int option;
+
+	ArrayList<Integer> torsoCartImages;	
+	ArrayList<Integer> torsoImages;
+	ArrayList<Integer> legsImages;
+	ArrayList<Integer> hairImages;
+	ArrayList<Integer> eyesImages;
+	ArrayList<Integer> mouthImages;
+
+	TranslateAnimation moveLefttoRight;
+	TranslateAnimation moveRighttoLeft;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		//Get intent from previous activity
+		Intent i = getIntent();
+		option = i.getIntExtra("option", 1);
+		torsoCartImages = i.getIntegerArrayListExtra("cart");
+		points = i.getIntExtra("points", 0);//get points from shopping list
+		totalPoints = i.getIntExtra("totalpoints", 0);	//shopping cart	
+		torsoOption = i.getIntExtra("torsoID", -1);
+		hairOption = i.getIntExtra("hairID", -1);
+		legsOption = i.getIntExtra("legsID", -1);
+		eyesOption = i.getIntExtra("eyesID", -1);
+		mouthOption = i.getIntExtra("mouthID", -1);
+		noseOption = i.getIntExtra("noseID", -1);
+		
+		if(option==1)
+		{
+			setContentView(R.layout.avatar_main_view);
+			
+		}
+		else if(option==2)
+		{
+			setContentView(R.layout.avatar_changing_room);
+		}
+		
+		torsoImages = new ArrayList<Integer>();
+		legsImages = new ArrayList<Integer>();
+		hairImages = new ArrayList<Integer>();
+		eyesImages = new ArrayList<Integer>();
+		mouthImages = new ArrayList<Integer>();		
+//	    android:id="@+id/textViewNoPoints"
+		
+		
+		torso = (ImageView) findViewById(R.id.imageViewAvatar1);
+		legs = (ImageView) findViewById(R.id.imageViewAvatar4);
+		hair = (ImageView) findViewById(R.id.imageViewAvatar3);
+		nose = (ImageView) findViewById(R.id.imageViewAvatar6);
+		eyes = (ImageView) findViewById(R.id.imageViewAvatar5);
+		mouth = (ImageView) findViewById(R.id.imageViewAvatar7);
+		doneButton = (Button) findViewById(R.id.buttonAvatarDone);
+		help = (ImageView) findViewById(R.id.imageView1);
+			
+	
+		
+		checkLegs(legsOption);
+		checkTorso(torsoOption);
+		checkHair(hairOption);	
+		 if(option==1){
+			 
+			 nose.setImageResource(noseOption);
+				eyes.setImageResource(eyesOption);
+				mouth.setImageResource(mouthOption);
+				torso.setImageResource(torsoImages.get(0));
+				legs.setImageResource(legsImages.get(0));
+				hair.setImageResource(hairImages.get(0));
+		 }
+
+		torso.setImageResource(torsoImages.get(0));
+		legs.setImageResource(legsImages.get(0));
+
+		
+		shop = (ImageView) findViewById(R.id.imageViewShop);	
+		
+		if(option==2)
+		{			
+			//torsoCartImages
+			for(int p = 0; p < torsoCartImages.size(); p++)
+			{
+				int torsoCart = torsoCartImages.get(p);
+				torsoImages.add(torsoCart);//add cart clothes to wardrobe clothes				
+			}
+		}		
+
+		help.setOnClickListener(new View.OnClickListener() 
+		{
+	        @Override
+	        public void onClick(View arg0) 
+	        {
+	        	if(option==1)
+	        	{
+	        		int legs = 	legsImages.get(legsI);
+	        		int torso = torsoImages.get(torsoI);
+	        		int hair = hairImages.get(hairI);
+	        	
+	        		Intent in = new Intent(MainView.this, AvatarHelp.class);
+	        		in.putExtra("points", points);
+	        		in.putExtra("option", 3);	
+	        		in.putExtra("legsID", legs);
+	        		in.putExtra("torsoID", torso);
+	        		in.putExtra("hairID", hair);
+	        		in.putExtra("eyesID", eyesOption);
+					in.putExtra("noseID", noseOption);
+					in.putExtra("mouthID", mouthOption);
+			
+					startActivity(in);
+						
+					overridePendingTransition(R.anim.bottom_slide_in, R.anim.bottom_slide_out);
+	        	}
+	        	else if(option==2)
+	        	{
+	        		int legs = 	legsImages.get(legsI);
+					int torso = torsoImages.get(torsoI);
+					int hair = hairImages.get(hairI);
+		        	
+		        	Intent in = new Intent(MainView.this, AvatarHelp.class);
+					in.putExtra("option", 6);	
+					in.putExtra("points", points);//???
+
+					in.putExtra("cart", torsoCartImages);
+					in.putExtra("originalPoints", points);
+					in.putExtra("totalPoints", totalPoints);
+					in.putExtra("legsID", legs);
+					in.putExtra("torsoID", torso);
+					in.putExtra("hairID", hair);
+					in.putExtra("eyesID", eyesOption);
+					in.putExtra("noseID", noseOption);
+					in.putExtra("mouthID", mouthOption);
+				
+					startActivity(in);
+							
+					overridePendingTransition(R.anim.bottom_slide_in, R.anim.bottom_slide_out);
+	        	}
+	        }
+	    });
+		
+		
+		//Torso Listener
+		torso.setOnTouchListener(new OnSwipeTouchListener() 
+		{
+	        public boolean onSwipeTop() 
+	        {//do nothing
+	            Toast.makeText(MainView.this, "top", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe top");
+	            return true;
+	        }
+	        public boolean onSwipeRight() 
+	        {
+	            Toast.makeText(MainView.this, "right", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe right torso");
+	            
+	            int j = torsoImages.size();
+
+	            if(torsoI==0)
+	            {	            	
+	            	torsoI= j-1;	
+	            }
+	            else
+	            {
+	            	torsoI = (torsoI-1);
+	            }
+	            moveRighttoLeft = new TranslateAnimation(0,1000,0,0);
+	            moveRighttoLeft.setDuration(250);//decrease duration - make quicker!
+	            moveRighttoLeft.setFillAfter(true);
+	            
+	            torso.startAnimation(moveRighttoLeft);		    
+			    moveTorsoRight(torsoI);
+	            return true;
+	        }
+	        public boolean onSwipeLeft() 
+	        {
+	            Toast.makeText(MainView.this, "left", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe left torso");
+
+	            int j = torsoImages.size();
+	            
+	            if(torsoI==j-1)
+	            {
+	            	torsoI= 0;
+	            }
+	            else
+	            {
+	            	torsoI = (torsoI+1);
+	            }
+
+	            moveLefttoRight = new TranslateAnimation(0, -1000, 0, 0);
+			    moveLefttoRight.setDuration(250);
+			    moveLefttoRight.setFillAfter(true);
+
+			    torso.startAnimation(moveLefttoRight);
+			    moveTorso(torsoI);
+	            return true;
+	        }
+	        public boolean onSwipeBottom() 
+	        {//do nothing
+	            Toast.makeText(MainView.this, "bottom", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe bottom");
+	            return true;
+	        }
+	    });
+		
+		torso.setOnClickListener(new View.OnClickListener() 
+		{
+	        @Override
+	        public void onClick(View arg0) 
+	        {
+	        	System.out.println("click torso");
+	        }
+	    });
+
+	
+		//Legs Listener
+		legs.setOnTouchListener(new OnSwipeTouchListener() 
+		{
+	        public boolean onSwipeTop() 
+	        {//do nothing
+	            Toast.makeText(MainView.this, "top", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe top");
+	            return true;
+	        }
+	        public boolean onSwipeRight() 
+	        {
+	            Toast.makeText(MainView.this, "right", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe right legs");
+	            
+	            int j = legsImages.size();
+
+	            if(legsI==0)
+	            {
+	            	legsI= j-1;	
+	            }
+	            else
+	            {
+	            	legsI = (legsI-1);
+	            }
+	            moveRighttoLeft = new TranslateAnimation(0,1000,0,0);
+	            moveRighttoLeft.setDuration(250);
+	            moveRighttoLeft.setFillAfter(true);
+	            legs.startAnimation(moveRighttoLeft);
+	            
+	            moveLegsRight(legsI); 
+	            return true;
+	        }
+	        public boolean onSwipeLeft() 
+	        {	
+	            Toast.makeText(MainView.this, "left", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe left legs");        
+	            int j = legsImages.size();
+	            
+	            if(legsI==j-1)
+	            {	
+	            	legsI= 0;	
+	            }
+	            else
+	            {
+	            	legsI = (legsI+1);
+	            }
+
+	            moveLefttoRight = new TranslateAnimation(0, -1000, 0, 0);
+			    moveLefttoRight.setDuration(250);
+			    moveLefttoRight.setFillAfter(true);
+			    legs.startAnimation(moveLefttoRight);
+			    moveLegs(legsI);
+
+	            return true;
+	        }
+	        public boolean onSwipeBottom() 
+	        {//do nothing
+	            Toast.makeText(MainView.this, "bottom", Toast.LENGTH_SHORT).show();
+	            System.out.println("swipe bottom");
+	            return true;
+	        }
+	    });
+		
+		legs.setOnClickListener(new View.OnClickListener() 
+		{
+	        @Override
+	        public void onClick(View arg0) 
+	        {
+	        	System.out.println("click legs");
+	        }
+	    });
+
+		
+		//Hair Listener
+		hair.setOnTouchListener(new OnSwipeTouchListener() 
+		{
+			public boolean onSwipeTop() 
+			{//do nothing
+				Toast.makeText(MainView.this, "top", Toast.LENGTH_SHORT).show();
+			    System.out.println("swipe top");
+			    return true;
+			}
+			public boolean onSwipeRight() 
+			{
+				Toast.makeText(MainView.this, "right", Toast.LENGTH_SHORT).show();
+			    System.out.println("swipe right hair");
+			            
+			    int j = hairImages.size();
+
+			    if(hairI==0)
+			    {        	
+			    	hairI= j-1;    	
+			    }
+			    else
+			    {
+			    	hairI = (hairI-1);
+			    }
+			    
+			    moveRighttoLeft = new TranslateAnimation(0,1000,0,0);
+			    moveRighttoLeft.setDuration(250);
+			    moveRighttoLeft.setFillAfter(true);
+			    hair.startAnimation(moveRighttoLeft);
+			    moveHairRight(hairI);
+			    return true;
+			}
+			public boolean onSwipeLeft() 
+			{
+			    Toast.makeText(MainView.this, "left", Toast.LENGTH_SHORT).show();
+			    System.out.println("swipe left hair");  
+			            
+			    int j = hairImages.size();
+			    
+			    if(hairI==j-1)
+			    {
+			    	hairI= 0;	
+			    }
+			    else
+			    {
+			    	hairI = (hairI+1);
+			    }
+
+			    moveLefttoRight = new TranslateAnimation(0, -1000, 0, 0);
+				moveLefttoRight.setDuration(250);
+				moveLefttoRight.setFillAfter(true);
+				hair.startAnimation(moveLefttoRight);
+				moveHair(hairI);
+
+			    return true;
+			}
+			public boolean onSwipeBottom() 
+			{//do nothing
+				Toast.makeText(MainView.this, "bottom", Toast.LENGTH_SHORT).show();
+				System.out.println("swipe bottom");
+				return true;
+			}
+		});
+				
+		
+		hair.setOnClickListener(new View.OnClickListener() 
+		{
+			@Override
+			public void onClick(View arg0) 
+			{
+				System.out.println("click hair");
+			}
+		});
+
+		
+
+		if(option==1)
+		{
+			doneButton.setOnClickListener(new View.OnClickListener() 
+			{
+				@Override
+			    public void onClick(View arg0) 
+				{
+					int legs = 	legsImages.get(legsI);
+					int torso = torsoImages.get(torsoI);
+					int hair = hairImages.get(hairI);
+			        	
+			        Intent in = new Intent(MainView.this, AvatarHomePage.class);
+					in.putExtra("option", 1);	
+					in.putExtra("points", points);
+					in.putExtra("legsID", legs);
+					in.putExtra("torsoID", torso);
+					in.putExtra("hairID", hair);
+					startActivity(in);
+			    }
+			});
+		}
+		else
+		{
+			shop.setOnClickListener(new View.OnClickListener() 
+			{
+				@Override
+				public void onClick(View arg0)
+				{
+					Intent in = new Intent(MainView.this, CheckoutView.class);
+					in.putExtra("cart", torsoCartImages);	
+					in.putExtra("points", points);
+					in.putExtra("totalpoints", totalPoints);
+					startActivity(in);  	
+				}
+			});
+		}   
+	}
+	
+
+	
+	private void checkLegs(int legID)
+	{
+		if(legID==legs1)
+		{
+			legsImages.add(legs1);
+			legsImages.add(legs2);
+		}
+		else
+		{
+			legsImages.add(legs2);
+			legsImages.add(legs1);	
+		}
+	}
+	
+	private void checkHair(int hairID)
+	{
+		if(hairID==hair2)
+		{
+			hairImages.add(hair2);
+			hairImages.add(hair3);
+			hairImages.add(hair4);
+			hairImages.add(hair5);
+			hairImages.add(hair6);
+			hairImages.add(hair7);
+		}
+		else if(hairID==hair3)
+		{
+			hairImages.add(hair3);
+			hairImages.add(hair4);
+			hairImages.add(hair5);
+			hairImages.add(hair6);
+			hairImages.add(hair7);
+			hairImages.add(hair2);
+		}
+		else if(hairID==hair4)
+		{
+			hairImages.add(hair4);
+			hairImages.add(hair5);
+			hairImages.add(hair6);
+			hairImages.add(hair7);
+			hairImages.add(hair2);
+			hairImages.add(hair3);
+		}
+		else if(hairID==hair5)
+		{
+			hairImages.add(hair5);
+			hairImages.add(hair6);
+			hairImages.add(hair7);
+			hairImages.add(hair2);
+			hairImages.add(hair3);
+			hairImages.add(hair4);
+		}
+		else if(hairID==hair6)
+		{
+			hairImages.add(hair6);
+			hairImages.add(hair7);
+			hairImages.add(hair2);
+			hairImages.add(hair3);
+			hairImages.add(hair4);
+			hairImages.add(hair5);
+		}
+		else
+		{
+			System.out.println("hair 7");
+			hairImages.add(hair7);
+			hairImages.add(hair2);
+			hairImages.add(hair3);
+			hairImages.add(hair4);
+			hairImages.add(hair5);
+			hairImages.add(hair6);
+		}
+	}
+
+	private void checkTorso(int torsoID)
+	{
+		if(torsoID==torso1)
+		{
+			torsoImages.add(torso1);
+			torsoImages.add(torso2);
+			torsoImages.add(torso3);
+			torsoImages.add(torso4);
+			torsoImages.add(torso5);
+			torsoImages.add(torso6);
+			torsoImages.add(torso7);
+		}
+		else if(torsoID==torso2)
+		{
+			torsoImages.add(torso2);
+			torsoImages.add(torso3);
+			torsoImages.add(torso4);
+			torsoImages.add(torso5);
+			torsoImages.add(torso6);
+			torsoImages.add(torso7);
+			torsoImages.add(torso1);
+		}
+		else if(torsoID==torso3)
+		{
+			torsoImages.add(torso3);
+			torsoImages.add(torso4);
+			torsoImages.add(torso5);
+			torsoImages.add(torso6);
+			torsoImages.add(torso7);
+			torsoImages.add(torso1);
+			torsoImages.add(torso2);
+		}
+		else if(torsoID==torso4)
+		{
+			torsoImages.add(torso4);
+			torsoImages.add(torso5);
+			torsoImages.add(torso6);
+			torsoImages.add(torso7);
+			torsoImages.add(torso1);
+			torsoImages.add(torso2);
+			torsoImages.add(torso3);
+		}
+		else if(torsoID==torso5)
+		{
+			torsoImages.add(torso5);
+			torsoImages.add(torso6);
+			torsoImages.add(torso7);
+			torsoImages.add(torso1);
+			torsoImages.add(torso2);
+			torsoImages.add(torso3);
+			torsoImages.add(torso4);
+		}
+		else if(torsoID==torso6)
+		{
+			torsoImages.add(torso6);
+			torsoImages.add(torso7);
+			torsoImages.add(torso1);
+			torsoImages.add(torso2);
+			torsoImages.add(torso3);
+			torsoImages.add(torso4);
+			torsoImages.add(torso5);
+		}
+		else
+		{
+			torsoImages.add(torso7);
+			torsoImages.add(torso1);
+			torsoImages.add(torso2);
+			torsoImages.add(torso3);
+			torsoImages.add(torso4);
+			torsoImages.add(torso5);
+			torsoImages.add(torso6);
+		}
+	}
+	
+
+	
+
+	private void moveHairRight(final int i)
+	{
+		Handler handler = new Handler(); 
+	    handler.postDelayed(new Runnable() 
+	    { 
+	    	public void run() 
+	    	{ 	 
+	    		moveLefttoRight = new TranslateAnimation(-1000,0,0,0);
+	        	moveLefttoRight.setDuration(250);
+	        	moveLefttoRight.setFillAfter(true);
+	     	    hair.setImageResource(hairImages.get(i));
+	     	    hair.startAnimation(moveLefttoRight);
+	         } 
+	    }, 500);
+	}
+	
+	private void moveLegsRight(final int i)
+	{
+		Handler handler = new Handler(); 
+	    handler.postDelayed(new Runnable() 
+	    { 
+	    	public void run() 
+	    	{ 	 
+	        	moveLefttoRight = new TranslateAnimation(-1000,0,0,0);
+	        	moveLefttoRight.setDuration(250);
+	        	moveLefttoRight.setFillAfter(true);
+	     	    legs.setImageResource(legsImages.get(i));
+	     	    legs.startAnimation(moveLefttoRight);
+	         } 
+	    }, 500);
+	}
+
+	private void moveTorsoRight(final int i)
+	{
+		Handler handler = new Handler(); 
+	    handler.postDelayed(new Runnable() 
+	    { 
+	    	public void run() 
+	    	{ 	 
+	        	moveLefttoRight = new TranslateAnimation(-1000,0,0,0);
+	        	moveLefttoRight.setDuration(250);
+	        	moveLefttoRight.setFillAfter(true);
+	     	    torso.setImageResource(torsoImages.get(i));
+	     	    torso.startAnimation(moveLefttoRight);
+	         } 
+	    }, 500);
+	}
+
+	private void moveHair(final int i)
+	{
+		Handler handler = new Handler(); 
+	    handler.postDelayed(new Runnable() 
+	    { 
+	    	public void run() 
+	    	{ 
+	        	moveRighttoLeft = new TranslateAnimation(1000, 0, 0, 0);
+	     	    moveRighttoLeft.setDuration(250);
+	     	    moveRighttoLeft.setFillAfter(true);
+	     	    hair.setImageResource(hairImages.get(i));
+	     	    hair.startAnimation(moveRighttoLeft);
+	         } 
+	    }, 500);
+	}
+	
+	private void moveLegs(final int i)
+	{
+		Handler handler = new Handler(); 
+	    handler.postDelayed(new Runnable() 
+	    { 
+	    	public void run() 
+	    	{ 
+	        	moveRighttoLeft = new TranslateAnimation(1000, 0, 0, 0);
+	     	    moveRighttoLeft.setDuration(250);
+	     	    moveRighttoLeft.setFillAfter(true);
+	     	    legs.setImageResource(legsImages.get(i));
+	     	    legs.startAnimation(moveRighttoLeft);
+	         } 
+	    }, 500);
+	}
+	
+
+	private void moveTorso(final int i)
+	{
+		Handler handler = new Handler(); 
+	    handler.postDelayed(new Runnable() 
+	    { 
+	    	public void run() 
+	    	{ 
+	        	moveRighttoLeft = new TranslateAnimation(1000, 0, 0, 0);
+	     	    moveRighttoLeft.setDuration(250);
+	     	    moveRighttoLeft.setFillAfter(true);
+	     	    torso.setImageResource(torsoImages.get(i));
+	     	    torso.startAnimation(moveRighttoLeft);
+	         } 
+	    }, 500);
+	}
+
+	
+}

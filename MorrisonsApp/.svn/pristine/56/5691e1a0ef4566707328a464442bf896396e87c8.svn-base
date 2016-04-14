@@ -1,0 +1,175 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/background"
+    
+ >
+    <!-- android:src="@drawable/torso1" 
+   android:layout_marginBottom="9dp" -->
+
+
+
+
+<!--    android:layout_width="162dp" -->
+ 
+    <ImageView
+        android:id="@+id/imageViewAvatar1"
+        android:layout_width="107dp"
+         android:layout_height="181dp"
+      android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"       
+        android:layout_below="@+id/imageViewAvatar2"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/torso1"
+         />
+    
+    <ImageView
+        android:id="@+id/imageViewAvatar2"
+        android:layout_width="46dp"
+        android:layout_height="51dp"
+        android:layout_marginLeft="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/head1" />
+    
+    
+    
+   
+
+
+<ImageView
+        android:id="@+id/imageViewAvatar6"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_alignLeft="@+id/imageViewAvatar2"  
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="-21dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/nose1" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatar5"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginLeft="-23dp"
+        android:layout_alignLeft="@+id/imageViewAvatar2"
+         android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/eyes3" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatar7"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="-21dp"
+   android:layout_alignLeft="@+id/imageViewAvatar2"
+        android:src="@drawable/mouth3" />
+    
+    <ImageView
+        android:id="@+id/imageViewAvatar3"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/hair1" />
+
+    <ImageView
+        android:id="@+id/imageViewHelpHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/help_77798" />
+
+    <!-- <ImageView
+        android:id="@+id/imageViewMessagesLink"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/imageViewAvatar6"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:src="@drawable/eyes_icon" /> -->
+
+    <!-- <ImageView
+        android:id="@+id/ImageViewFriendsLink"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/ImageViewAvatarLink"
+        android:layout_alignLeft="@+id/imageViewMessagesLink"
+        android:layout_marginBottom="22dp"
+        android:src="@drawable/salon_icon" /> --> 
+
+    <ImageView
+        android:id="@+id/ImageViewStarPoints"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/imageViewAvatar3"
+        android:layout_marginRight="23dp"
+        android:layout_toLeftOf="@+id/imageViewAvatar1"
+        android:src="@drawable/stars1" />
+
+    <TextView
+        android:id="@+id/textViewNoPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ImageViewStarPoints"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="#BC1111"
+        android:text="100"
+        android:textSize="20sp" />
+
+    <!-- <TextView
+        android:id="@+id/textViewNoMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewNoPoints"
+        android:layout_alignRight="@+id/imageViewMessagesLink"
+        android:layout_marginRight="6dp"
+        android:textSize="15sp" 
+        android:paddingTop = "5dp"
+        android:paddingBottom = "5dp"
+        android:paddingRight = "10dp"
+        android:paddingLeft = "10dp"
+        android:background="#AAffffff"
+        android:text="1"
+        android:textColor="#ff0000" /> -->
+
+      <!-- <TextView
+          android:id="@+id/textViewNoFriends"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/textViewNoMessages"
+          android:layout_alignTop="@+id/ImageViewFriendsLink"
+          android:background="#AAffffff"
+          android:paddingBottom="5dp"
+          android:paddingLeft="10dp"
+          android:paddingRight="10dp"
+          android:paddingTop="5dp"
+          android:text="1"
+          android:textColor="#ff0000"
+          android:textSize="15sp" /> -->
+
+    <ImageView
+        android:id="@+id/ImageViewAvatarLink"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageViewAvatar2"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/mood" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatarMenu4"
+        android:layout_width="162dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/imageViewHelpHome"
+        android:layout_marginBottom="38dp"
+        android:layout_toRightOf="@+id/textViewNoPoints"
+        android:src="@drawable/legs1" />
+
+</RelativeLayout>

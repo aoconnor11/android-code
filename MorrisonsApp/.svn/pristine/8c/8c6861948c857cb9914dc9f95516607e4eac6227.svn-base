@@ -1,0 +1,27 @@
+package com.bluemetrix.scratchcard;
+
+import com.bluemetrix.storeapp.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class ScratchCard extends Activity{
+
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.scratchcard_layout);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+	
+}

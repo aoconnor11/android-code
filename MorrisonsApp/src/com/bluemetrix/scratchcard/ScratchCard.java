@@ -1,0 +1,53 @@
+package com.bluemetrix.scratchcard;
+
+import com.bluemetrix.storeapp.HomePage;
+import com.bluemetrix.storeapp.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class ScratchCard extends Activity{
+
+	private WScratchView scratchView;
+	private TextView done;
+	private int option;//make sure empty list
+	private int userID;
+	private int points;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.scratchcard_layout);
+
+
+		scratchView = (WScratchView) findViewById(R.id.scratch_view);
+		done = (TextView) findViewById(R.id.textView1);
+
+		Intent in = getIntent();
+		points = in.getIntExtra("points", 0);
+		option = in.getIntExtra("option", 1);
+		userID = in.getIntExtra("user", 2);
+
+		//  customize attribute programmatically
+		scratchView.setScratchable(true);
+		scratchView.setRevealSize(100);
+		scratchView.setAntiAlias(true);
+		scratchView.setOverlayColor(Color.RED); 
+
+		done.setOnClickListener(new View.OnClickListener() 
+		{
+			public void onClick(View view) 
+			{             	
+				Intent in = new Intent(ScratchCard.this, HomePage.class);
+				in.putExtra("option", option);
+				in.putExtra("points", points);
+				in.putExtra("user", userID);
+				startActivity(in);
+			}
+		});
+	}
+}

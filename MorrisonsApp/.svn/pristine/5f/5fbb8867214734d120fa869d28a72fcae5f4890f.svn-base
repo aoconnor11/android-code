@@ -1,0 +1,140 @@
+package com.bluemetrix.storeapp;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Bakery extends Activity{
+
+	private ArrayList <StoreItem> myList;
+	private Button shoppingList;
+	private ImageView brownBread;
+	private ImageView croissant;
+	private ImageView rolls;
+	private ImageView whiteBread;
+	private int points;
+	
+	//quantity
+	private int whiteBreadCount = 0;
+	private int rollsCount = 0;
+	private int croissantCount = 0;
+	private int brownBreadCount = 0;
+	private StoreItem whiteBreadItem;
+	private StoreItem rollsItem;
+	private StoreItem croissantItem;
+	private StoreItem brownBreadItem;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	
+		setContentView(R.layout.bakery);
+		
+		 shoppingList = (Button) findViewById(R.id.buttonList);
+		// store = (Button) findViewById(R.id.buttonStores);
+		
+		 myList = getIntent().getParcelableArrayListExtra ("list");
+		 points = getIntent().getIntExtra("points", 0);
+	
+		 brownBread = (ImageView) findViewById(R.id.ImageView08);		 
+		 croissant = (ImageView) findViewById(R.id.ImageView03);
+		 rolls = (ImageView) findViewById(R.id.imageView02);
+		 whiteBread = (ImageView) findViewById(R.id.ImageView04);
+		 
+		 whiteBread.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	    whiteBreadCount++;
+	    		  		whiteBreadItem = new StoreItem(R.drawable.whitepan_icon, "White Bread", 26, whiteBreadCount, "");	
+	    		  		Toast.makeText(Bakery.this, "White bread added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });	 
+		 
+		 rolls.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				rollsCount++;
+	    		  		rollsItem = new StoreItem(R.drawable.roll_icon, "Rolls", 25, rollsCount, "");	
+	    		  		Toast.makeText(Bakery.this, "Rolls added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		 
+		 croissant.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				croissantCount++;
+	    		  		croissantItem = new StoreItem(R.drawable.croissant_icon, "Croissant", 24, croissantCount,"");	
+	    		  		Toast.makeText(Bakery.this, "Croissant added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+		 
+		   brownBread.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    				brownBreadCount++;
+	    				brownBreadItem = new StoreItem(R.drawable.bread_icon, "Brown Bread", 23, brownBreadCount,"");	
+	    		  		Toast.makeText(Bakery.this, "Brown bread added to shopping list", Toast.LENGTH_SHORT).show();
+	    		}
+	     });
+
+		 
+		 shoppingList.setOnClickListener(new OnClickListener() 
+	        {
+	    		@Override
+	    		public void onClick(View v)
+	    		{	
+	    			
+	    			//add items to shopping list - only if quantity larger than 0
+	    			 if(whiteBreadCount!=0){	 
+	    				 myList.add(whiteBreadItem);
+	    			 }
+	    			 if(rollsCount!=0){	 
+	    				 myList.add(rollsItem);
+	    			 }
+	    			 if(croissantCount!=0){
+	    				 myList.add(croissantItem);
+	    			 }
+	    			 if(brownBreadCount!=0){
+	    				 myList.add(brownBreadItem);
+	    			 }
+	    			
+			
+	    			Intent in = new Intent(Bakery.this, ShoppingList.class);
+	    			
+	    			ArrayList<StoreItem> sendList = new ArrayList <StoreItem>();
+	    			for(int i=0; i<myList.size(); i++){
+	    				sendList.add(myList.get(i));
+	    			}
+	    			 if (sendList.size()==0){
+	    				 in.putExtra("option", 1);
+	    				 in.putExtra("points", points);
+	    			 }
+	    			 else{
+	    			in.putExtra("option", 3);
+	    			in.putExtra("points", points);
+	    			 in.putParcelableArrayListExtra("list", sendList);//send array of storeitems
+	    			 }
+	    		   
+	            	startActivity(in);    			
+	    		}
+	     });
+		 
+	
+	
+	}
+}

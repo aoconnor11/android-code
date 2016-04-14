@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bluemetrix.storeapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Morrisons"
+        android:theme="@style/AppTheme" >
+        
+        
+        <activity
+            android:name="com.bluemetrix.storeapp.HomePage"
+            android:label="Morrisons" 
+                android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                android:screenOrientation="portrait" >
+          
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+         <activity
+            android:name="com.bluemetrix.scratchcard.ScratchCard"
+                android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                android:screenOrientation="portrait" >
+  
+        </activity>
+             <activity
+            android:name="com.bluemetrix.storeapp.StoreCategories"
+            android:label="Items" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                  <activity
+            android:name="com.bluemetrix.storeapp.ShoppingList"
+            android:label="Shopping List" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+            <activity
+            android:name="com.bluemetrix.storeapp.StoreList"
+            android:label="Store" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+             <activity
+            android:name="com.bluemetrix.storeapp.Bakery"
+            android:label="Bakery" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+               <activity
+            android:name="com.bluemetrix.storeapp.Fruit"
+            android:label="Fruit" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+               <activity
+            android:name="com.bluemetrix.storeapp.GreenGrocer"
+            android:label="Green Grocer" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                <activity
+            android:name="com.bluemetrix.storeapp.Butcher"
+            android:label="Meat &amp; Poultry" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                  <activity
+            android:name="com.bluemetrix.storeapp.SeaFood"
+            android:label="Seafood" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                  <activity
+            android:name="com.bluemetrix.storeapp.Dairy"
+            android:label="Dairy" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                     <activity
+            android:name="com.bluemetrix.storeapp.Pantry"
+            android:label="Pantry" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                      <activity
+            android:name="com.bluemetrix.storeapp.Drinks"
+            android:label="Drinks" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                      <activity
+            android:name="com.bluemetrix.storeapp.BeerWine"
+            android:label="Beer &amp; Wine" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                       <activity
+            android:name="com.bluemetrix.storeapp.SaucesSpices"
+            android:label="Sauces &amp; Spices" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                       <activity
+            android:name="com.bluemetrix.storeapp.DryFoods"
+            android:label="Dry Foods" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                       <activity
+            android:name="com.bluemetrix.storeapp.Snacks"
+            android:label="Snacks" 
+             android:screenOrientation="portrait" >          
+        </activity>
+        
+                       <activity
+                           android:configChanges="orientation|screenSize"
+            android:name="com.bluemetrix.storeapp.PlayVideo"
+            android:label="Recipes" 
+       >          
+        </activity>
+        
+                       <activity
+            android:name="com.bluemetrix.storeapp.avatar.AvatarHomePage"
+            android:label="Avatar Home" 
+             android:screenOrientation="portrait"
+       >          
+        </activity>
+        
+                        <activity
+            android:name="com.bluemetrix.storeapp.avatar.AvatarHelp"
+            android:label="Help" 
+             android:screenOrientation="portrait"
+       >          
+        </activity>
+        
+                             <activity
+            android:name="com.bluemetrix.storeapp.avatar.MainView"
+            android:label="" 
+               android:theme="@android:style/Theme.NoTitleBar"
+             android:screenOrientation="portrait"
+       >          
+        </activity>
+                 <activity
+            android:name="com.bluemetrix.storeapp.avatar.ShopsView"
+            android:label="" 
+               android:theme="@android:style/Theme.NoTitleBar"
+             android:screenOrientation="portrait"
+       >          
+        </activity>
+        <activity
+            android:name="com.bluemetrix.storeapp.avatar.CoverFlowExample"
+            android:label="" 
+               android:theme="@android:style/Theme.NoTitleBar"
+             android:screenOrientation="portrait"
+       >          
+        </activity>
+          <activity
+            android:name="com.bluemetrix.storeapp.avatar.CheckoutView"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.storeapp.avatar.PurchaseView"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.bluemetrix.appstore.avatar.CoverFlow"
+            android:label="@string/app_name" 
+                android:theme="@android:style/Theme.NoTitleBar"
+              android:screenOrientation="portrait">
+            
+        </activity>
+        
+        
+    </application>
+
+</manifest>
