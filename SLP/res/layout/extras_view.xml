@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="58.62"
+        android:background="@drawable/background" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutPause"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/linearLayout1"
+            android:layout_alignLeft="@+id/linearLayout1"
+            android:layout_alignRight="@+id/linearLayout1"
+            android:layout_alignTop="@+id/linearLayout1" >
+
+            <ScrollView
+                android:id="@+id/ScrollView02"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                 android:layout_marginBottom="10dp"
+                android:layout_above="@+id/relLayoutContinue" >
+            
+            <TextView
+                android:id="@+id/textViewExtras"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                
+                android:textColor="#000000" />
+            </ScrollView>
+            <!--  android:text="@string/extraText"-->
+            
+            <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+             android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout2"
+            android:layout_alignLeft="@+id/linearLayout2"
+            android:layout_alignRight="@+id/linearLayout2"
+            android:layout_alignTop="@+id/linearLayout2" >
+
+             <TextView
+                android:id="@+id/textViewBeginner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/continueText"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+       <!--  <TextView
+            android:id="@+id/textViewExtras1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_below="@+id/textViewExtras"
+            android:textColor="#000000"
+            android:text="@string/extraText1" />
+
+        <TextView
+            android:id="@+id/textViewExtras1a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_below="@+id/textViewExtras1"
+            android:textColor="#000000"
+            android:text="@string/extraJap1" />
+
+        <TextView
+            android:id="@+id/textViewExtras2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_below="@+id/textViewExtras1a"
+            android:textColor="#000000"
+            android:text="@string/extraText2" />
+
+        <TextView
+            android:id="@+id/textViewExtras2a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewExtras2"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#000000"
+            android:text="@string/extraJap2" />
+
+        <TextView
+            android:id="@+id/textViewExtras3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewExtras2a"
+            android:textColor="#000000"
+            android:text="@string/extraText3" />
+
+        <TextView
+            android:id="@+id/textViewExtras3a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewExtras3"
+            android:textColor="#000000"
+            android:text="@string/extraJap3" />
+
+        <TextView
+            android:id="@+id/textViewExtras4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_alignParentLeft="true"
+            android:textColor="#000000"
+            android:layout_below="@+id/textViewExtras3a"
+            android:text="@string/extraText4" />
+             -->
+
+        
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/help_77798" />
+
+    </RelativeLayout>
+
+</LinearLayout>

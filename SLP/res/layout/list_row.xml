@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="horizontal"
+    android:padding="5dip">
+    
+    
+     <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/image_bg"
+        android:layout_marginRight="5dip"> 
+  
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:src="@drawable/storetorso1"/> 
+  
+    </LinearLayout>
+
+      <TextView
+          android:id="@+id/title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/thumbnail"
+          android:layout_marginTop="18dp"
+          android:layout_toRightOf="@+id/thumbnail"
+          android:text="Title"
+          android:textColor="#040404"
+          android:textSize="20dip"
+          android:textStyle="bold"
+          android:typeface="sans" />
+
+      <TextView
+          android:id="@+id/checkout_list_points"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/title"
+          android:layout_alignBottom="@+id/title"
+          android:layout_alignParentRight="true"
+          android:gravity="right"
+          android:text="20"
+            android:layout_marginRight="5dip"
+          android:textColor="#4682b4"
+          android:textSize="20dip"
+          android:textStyle="bold" />
+
+</RelativeLayout>

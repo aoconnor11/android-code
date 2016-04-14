@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+         <TextView
+             android:id="@+id/textViewExit"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentTop="true"
+             android:padding="10dp"
+             android:textStyle="bold"
+             android:text="@string/x" />
+
+         <TextView
+             android:id="@+id/textViewProfileHelp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/textViewExit"
+             android:layout_marginLeft="16dp"
+             android:layout_toRightOf="@+id/textViewExit"
+             android:textStyle="bold"
+             android:text="@string/helpProfile"
+             android:textAppearance="?android:attr/textAppearanceLarge" />
+         
+         <LinearLayout
+            android:id="@+id/linearLayoutProfileText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBottom="@+id/linearLayoutProfileText"
+               android:layout_alignLeft="@+id/textViewProfileHelp"
+               android:layout_alignRight="@+id/linearLayoutProfileText"
+               android:layout_alignTop="@+id/linearLayoutProfileText" >
+         
+          <ScrollView
+                android:id="@+id/ScrollViewProfileText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+         
+         <TextView
+             android:id="@+id/textViewProfileHelpText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+			 android:layout_marginTop="16dp"
+             android:text="@string/helpProfileText" />
+         
+         </ScrollView>
+         </RelativeLayout>       
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"  
+    android:background="@drawable/background"
+    >
+    
+<RelativeLayout   
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+ <LinearLayout
+     android:id="@+id/linearLayoutFriendRequests"
+     android:layout_width="80dp"
+     android:layout_height="50dp"
+     android:layout_alignParentRight="true"
+       android:layout_alignParentLeft="true"
+     android:layout_alignParentTop="true"
+     android:layout_marginRight="20dp"
+       android:layout_marginLeft="20dp"
+     android:layout_marginTop="20dp"
+     android:background="@drawable/roundbutton2"
+     android:orientation="vertical" >
+
+  </LinearLayout>
+    
+    
+       <RelativeLayout
+           android:id="@+id/relativeLayout1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/linearLayoutFriendRequests"
+           android:layout_alignLeft="@+id/linearLayoutFriendRequests"
+           android:layout_alignRight="@+id/linearLayoutFriendRequests"
+           android:layout_alignTop="@+id/linearLayoutFriendRequests" >
+
+           <TextView
+               android:id="@+id/textViewFriendsRequest"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_centerVertical="true"
+               android:text="@string/friendsRequests"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textColor="#4682b4"
+               android:textStyle="bold" />
+       </RelativeLayout>
+
+       
+       
+       
+       
+       
+       
+       
+       <LinearLayout
+           android:id="@+id/LinearLayoutFriendsList"
+           android:layout_width="80dp"
+           android:layout_height="50dp"
+           android:layout_alignLeft="@+id/linearLayoutFriendRequests"
+           android:layout_alignRight="@+id/linearLayoutFriendRequests"
+           android:layout_below="@+id/linearLayoutFriendRequests"
+           android:layout_marginTop="15dp"
+           android:background="@drawable/roundbutton2"
+           android:orientation="vertical" >
+
+       </LinearLayout>
+       
+        <RelativeLayout
+           android:id="@+id/relativeLayout2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/LinearLayoutFriendsList"
+           android:layout_alignLeft="@+id/LinearLayoutFriendsList"
+           android:layout_alignRight="@+id/LinearLayoutFriendsList"
+           android:layout_alignTop="@+id/LinearLayoutFriendsList" >
+
+           <TextView
+               android:id="@+id/textViewFriendsList"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_centerVertical="true"
+               android:text="@string/friendsList"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textColor="#4682b4"
+               android:textStyle="bold" />
+       </RelativeLayout>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+
+       <LinearLayout
+           android:id="@+id/LinearLayoutLeagueTable"
+           android:layout_width="80dp"
+           android:layout_height="50dp"
+           android:layout_alignLeft="@+id/LinearLayoutFriendsList"
+           android:layout_alignRight="@+id/LinearLayoutFriendsList"
+           android:layout_below="@+id/LinearLayoutFriendsList"
+           android:layout_marginTop="17dp"
+           android:background="@drawable/roundbutton2"
+           android:orientation="vertical" >
+
+       </LinearLayout>
+       
+        <RelativeLayout
+           android:id="@+id/relativeLayout3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/LinearLayoutLeagueTable"
+           android:layout_alignLeft="@+id/LinearLayoutLeagueTable"
+           android:layout_alignRight="@+id/LinearLayoutLeagueTable"
+           android:layout_alignTop="@+id/LinearLayoutLeagueTable" >
+
+           <TextView
+               android:id="@+id/textViewLeagueTable"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_centerVertical="true"
+               android:text="@string/leagueTable"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textColor="#4682b4"
+               android:textStyle="bold" />
+       </RelativeLayout>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+
+       <LinearLayout
+           android:id="@+id/LinearLayoutManageGroups"
+           android:layout_width="80dp"
+           android:layout_height="50dp"
+           android:layout_alignLeft="@+id/LinearLayoutLeagueTable"
+           android:layout_alignRight="@+id/LinearLayoutLeagueTable"
+           android:layout_below="@+id/LinearLayoutLeagueTable"
+           android:layout_marginTop="16dp"
+           android:background="@drawable/roundbutton2"
+           android:orientation="vertical" >
+
+       </LinearLayout>
+        <RelativeLayout
+           android:id="@+id/relativeLayout4"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/LinearLayoutManageGroups"
+           android:layout_alignLeft="@+id/LinearLayoutManageGroups"
+           android:layout_alignRight="@+id/LinearLayoutManageGroups"
+           android:layout_alignTop="@+id/LinearLayoutManageGroups" >
+
+           <TextView
+               android:id="@+id/textViewManageGroups"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_centerVertical="true"
+               android:text="@string/manageGroups"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textColor="#4682b4"
+               android:textStyle="bold" />
+       </RelativeLayout>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+  
+</RelativeLayout>
+        
+
+</LinearLayout>

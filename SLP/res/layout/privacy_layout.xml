@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+         <LinearLayout
+            android:id="@+id/linearLayoutPrivacyText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBottom="@+id/linearLayoutPrivacyText"
+               android:layout_alignLeft="@+id/textViewPrivacyTitle"
+               android:layout_alignRight="@+id/linearLayoutPrivacyText"
+               android:layout_below="@+id/textViewPrivacyTitle" >
+         
+          <ScrollView
+                android:id="@+id/ScrollViewAvatarText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+         
+         <!-- <TextView
+             android:id="@+id/textViewPrivacyText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/privacyText" /> -->
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical" >
+                  
+                  <TextView
+             android:id="@+id/textViewPrivacyText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/privacyText" />
+                  
+                  <TextView
+               android:id="@+id/textViewPrivacyDataTitle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="18dp"
+               android:text="@string/privacyDataTitle"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textStyle="bold" />
+                  
+                  <TextView
+             android:id="@+id/textViewPrivacyDataText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/privacyDataText" />
+                  
+                <TextView
+               android:id="@+id/textViewPrivacyAdTitle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="18dp"
+               android:text="@string/privacyAdTitle"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textStyle="bold" />  
+                  
+                 <TextView
+             android:id="@+id/textViewPrivacyAdText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/privacyAdText" /> 
+                  
+                  
+               <TextView
+               android:id="@+id/textViewPrivacyMessTitle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="18dp"
+               android:text="@string/privacyMessTitle"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textStyle="bold" />     
+                 
+                   <TextView
+             android:id="@+id/textViewPrivacyMessText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/privacyMessText" /> 
+                 
+                 <TextView
+               android:id="@+id/textViewPrivacyleavingTitle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="18dp"
+               android:text="@string/privacyLeavingTitle"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textStyle="bold" />     
+                 
+                  <TextView
+             android:id="@+id/textViewPrivacyLeavingText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/privacyLeavingText" /> 
+                  
+              </LinearLayout>
+         
+         </ScrollView>
+         </RelativeLayout>
+
+           <TextView
+               android:id="@+id/textViewPrivacyTitle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/linearLayoutPrivacyText"
+               android:layout_alignParentTop="true"
+               android:layout_marginTop="18dp"
+               android:text="@string/privacyTitle"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textStyle="bold" />
+       
+    </RelativeLayout>
+</LinearLayout>

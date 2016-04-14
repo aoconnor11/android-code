@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background" >
+    
+    
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+       <TextView
+           android:id="@+id/textViewWelcomeCheckout"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+           android:layout_centerHorizontal="true"
+           android:textColor="#ffffff"
+           android:layout_marginTop="16dp"
+           android:text="@string/welcomeCheckout"
+           android:textAppearance="?android:attr/textAppearanceLarge" />
+
+     
+        <LinearLayout
+            android:id="@+id/linearLayoutWelcomePoints"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+		<RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayoutWelcomePoints"
+            android:layout_alignLeft="@+id/linearLayoutWelcomePoints"
+            android:layout_alignRight="@+id/linearLayoutWelcomePoints"
+            android:layout_alignTop="@+id/linearLayoutWelcomePoints" >
+
+			<TextView
+			    android:id="@+id/textViewWelcomePoints"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:textAppearance="?android:attr/textAppearanceLarge" 
+			    android:layout_centerVertical="true"
+			    android:textColor="#b03060"
+			    android:text="@string/manyCredits" />
+        
+        </RelativeLayout>
+        
+		
+		
+		 <LinearLayout
+            android:id="@+id/linearLayoutCheckoutItems"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayoutCheckoutItems"
+            android:layout_alignLeft="@+id/linearLayoutCheckoutItems"
+            android:layout_alignRight="@+id/linearLayoutCheckoutItems"
+            android:layout_alignTop="@+id/linearLayoutCheckoutItems" >
+
+            <ListView
+                android:id="@+id/listViewCheckoutItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </ListView>
+        </RelativeLayout>
+        
+        
+        
+        <LinearLayout
+            android:id="@+id/linearLayoutCheckoutTotal"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="350dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+		<RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayoutCheckoutTotal"
+            android:layout_alignLeft="@+id/linearLayoutCheckoutTotal"
+            android:layout_alignRight="@+id/linearLayoutCheckoutTotal"
+            android:layout_alignTop="@+id/linearLayoutCheckoutTotal" >
+
+			<TextView
+			    android:id="@+id/textViewCheckoutTotal"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:textAppearance="?android:attr/textAppearanceLarge" 
+			    android:layout_centerVertical="true"
+			    android:textColor="#b03060"
+			    android:text="@string/totalThirty" />
+        
+        </RelativeLayout>
+        
+		
+		
+		
+		
+		 <LinearLayout
+            android:id="@+id/linearLayoutPurchase"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp"
+            android:layout_marginTop="420dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+		<RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayoutPurchase"
+            android:layout_alignLeft="@+id/linearLayoutPurchase"
+            android:layout_alignRight="@+id/linearLayoutPurchase"
+            android:layout_alignTop="@+id/linearLayoutPurchase" >
+
+			<TextView
+			    android:id="@+id/textViewCheckoutPurchase"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:textAppearance="?android:attr/textAppearanceLarge" 
+			    android:layout_centerVertical="true"
+			    android:textStyle="bold"
+			    android:textColor="#4682b4"
+			    android:text="@string/makePurchase" />
+        
+        </RelativeLayout>
+        
+        
+        
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/help_77798" />
+		
+    </RelativeLayout>
+
+</LinearLayout>

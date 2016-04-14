@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="fill_parent" 
+  android:layout_height="fill_parent"
+  android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="308dp"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/button_text_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_checkout"
+            android:padding="10dp"
+            android:text="@string/friends" />
+
+        <TextView
+            android:id="@+id/myTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button2"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_centerHorizontal="true"
+            android:text="@string/requests"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>

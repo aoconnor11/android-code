@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="58.62"
+        android:background="@drawable/background" >
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTrans"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="180dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutPauseTransript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayoutTrans"
+            android:layout_alignLeft="@+id/linearLayoutTrans"
+            android:layout_alignRight="@+id/linearLayoutTrans"
+            android:layout_alignTop="@+id/linearLayoutTrans" >
+
+            <ScrollView
+                android:id="@+id/ScrollView01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/textViewTranscript"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"    
+                    android:textColor="#000000" />
+                
+                <!--android:text="@string/transcript"  -->
+            </ScrollView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/relLayoutPauseTransript"
+            android:layout_marginBottom="30dp"
+             android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout1"
+            android:layout_alignLeft="@+id/linearLayout1"
+            android:layout_alignRight="@+id/linearLayout1"
+            android:layout_alignTop="@+id/linearLayout1" >
+
+            <!-- NOT ACTUAL TEXT - JUST PUT IN TO SHOW TEXT PLACEMENT - text from Cathal -->
+
+            <TextView
+                android:id="@+id/textViewAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="良くできました！こんどはしっかり英語を聞いてね。それじゃ、画面にタッチ！"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textViewAudio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/swipeText"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textViewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/count"
+                android:textColor="#FF0000"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/help_77798" />
+
+    </RelativeLayout>
+
+</LinearLayout>

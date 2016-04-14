@@ -1,0 +1,531 @@
+<resources>
+
+    <string name="app_name">SLP App</string>
+    <string name="menu_settings">Settings</string>
+    <string name="buttonAtAirport"><b>\"At the Airport\"</b></string>
+    <string name="buttonHome"><b>Home</b></string>
+    <string name="initialScene">You are now at the airport and must decide how to get to the city centre and your hotel.</string>
+	<string name="finalScene">Well done - you have arrived. Go back and select some more places to see</string>
+	<string name="branchView">How do you wish to travel to the hotel?\nA. By taxi\nB. By bus\nC. By rental car</string>
+    <string name="buttonA">A</string>
+    <string name="buttonB">B</string>
+	<string name="buttonC">C</string>
+	<string name="questionView">You reach a taxi. Before leaving you should</string>
+	<string name="questionViewA">A. Agree a price</string>
+	<string name="questionViewB">B. Give directions</string>
+	<string name="score">Total Score: </string>
+	
+	
+	
+	<string name="resetSent">A reset email will be sent to you</string>
+	<string name="resetPass">Reset Password</string>
+	
+	
+	
+	
+	
+	
+	
+	
+	<string name="garmentTag">garmentTag</string>
+	
+	<string name="hairSalon">Hair Salon</string>
+	<string name="londonCollection">London Collection</string>
+	<string name="parisCollection">Paris Collection</string>
+	
+	<string name="bloodType">Blood Type</string>
+	<string name="ageRange">Age Range</string>
+	<string name="selectAge">Select Age</string>
+	<string name="male">Male</string>
+	<string name="female">Female</string>
+	<string name="emailHint">\u00A0email</string>
+	<string name="passwordHint">\u00A0password</string>
+	<string name="confirmPasswordHint">\u00A0confirm password</string>
+	<string name="nameHint">\u00A0name</string>
+	
+	
+	
+	<string name="add">Add!</string>
+	<string name="find">Find</string>
+	<string name="findUsername">Enter a username:</string>
+	<string name="findEmail">Enter an email:</string>
+	<string name="or">OR</string>
+	<string name="cancel">Cancel</string>
+	<string name="addFriends">Add Friends</string>
+	<string name="friendsFound">Friends Found</string>
+	
+	
+	<string name="friends">Friends</string>
+	<string name="friendsRequests">Your Friend Requests</string>
+	<string name="friendsList">Your Friends List</string>
+	<string name="leagueTable">League Table</string>
+	<string name="manageGroups">Manage Groups</string>
+	<string name="requests">Requests</string>
+	
+	
+	<string name="noCredits">100 Credits</string>
+	<string name="emptyBasket">0 in Basket</string>
+	<string name="manyCredits">You have 100 credits</string>
+	<string name="totalThirty">Total - 30</string>
+	<string name="twentyCredits">20 pts</string>
+	<string name="plus">+</string>
+	
+	<string name="reset">Reset Password</string>
+	<string name="resetEmail">An email with reset instructions will be sent to your email account.</string>
+	
+	
+	
+	<string name="thanksPurchase">Thanks for your purchase</string>
+	<string name="tryPurchase">Try your purchases!</string>
+	<string name="makePurchase">Make Purchase</string>
+	<string name="welcomeCheckout">Welcome to Checkout</string>
+	
+	<string name="ezpz">EzPz</string>
+	<string name="email">e-mail</string>
+	<string name="pass">password</string>
+	<string name="logIn">Log In</string>
+	<string name="forgotPass">forgot password</string>
+	<string name="signUp">Sign Up</string>
+	<string name="learnMore">Learn More</string>
+	<string name="div">|</string>
+	
+	<string name="playMessage">Play Message</string>
+	<string name="send">Send</string>
+	<string name="messHint"> enter message...</string>
+	
+	
+	
+	<!-- Strings from iOS app  - more questions -->
+	<string name="busQuestion">
+	    Arriving at the bus, you should: 
+	</string>
+	<string name="busQuestionA">
+	    A. Check that it is the right bus
+	</string>
+	<string name="busQuestionB">
+	    B. That it has four wheels
+	</string>
+
+	<string name="done">Done</string>
+	<string name="busQuestion2">
+	    On the bus, the driver might ask to see 
+	</string>
+	<string name="busQuestion2A">
+	    A. Your ticket
+	</string>
+	<string name="busQuestion2B">
+	    B. Your guidebook
+	</string>
+	<string name="busQuestion2C">
+	    C. A postcard
+	</string>
+	
+	
+	<string name="carQuestion">
+	    At the rental car desk, you will be asked for
+	</string>
+	<string name="carQuestionA">
+	    A. Your passport
+	</string>
+	<string name="carQuestionB">
+	    B. Your guidebook
+	</string>
+	
+	
+	
+	
+	<string name="carQuestion2">
+	    You are parking at the hotel. You see a space marked reserved
+	</string>
+	<string name="carQuestion2A">
+	    A. You should park there
+	</string>
+	<string name="carQuestion2B">
+	    B. You should find another space
+	</string>
+	
+	
+	<string name="sightsOptions">
+	    You have arrived at the hotel. You decide to see some sights\nA. See some northern sights\nB. See some southern sights
+	</string>
+	
+	<string name="capitalTurkeyQ">
+	    What is the capital of Turkey?
+	</string>
+	<string name="capitalTurkeyQA">
+	    A. Ankara
+	</string>
+	<string name="capitalTurkeyQB">
+	    B. Istanbul
+	</string>
+	<string name="capitalTurkeyQC">
+	    C. Greece
+	</string>
+	
+
+	
+	<string name="populationTurkeyQ">
+	    What is the population of Turkey?
+	</string>
+	<string name="populationTurkeyQA">
+	    A. 55 million people
+	</string>
+	<string name="populationTurkeyQB">
+	    B. 65 million people
+	</string>
+	<string name="populationTurkeyQC">
+	    C. 75 million people
+	</string>
+	
+
+	
+	<string name="ottomanEmpireQ">
+	    When was the Ottoman Empire at the height of its power?
+	</string>
+	<string name="ottomanEmpireQA">
+	    A. 14th and 15th century
+	</string>
+	<string name="ottomanEmpireQB">
+	    B. 16th and 17th century
+	</string>
+	<string name="ottomanEmpireQC">
+	    C. 18th and 19th century
+	</string>
+		
+	
+	<string name="provincesTurkeyQ">
+	    How many provinces is Turkey made up of ?
+	</string>
+	<string name="provincesTurkeyQA">
+	    A. 41
+	</string>	
+	<string name="provincesTurkeyQB">
+	    B. 61
+	</string>
+	<string name="provincesTurkeyQC">
+	    C. 81
+	</string>
+	
+	
+
+	<string name="biggestCityTurkeyQ">
+	    What is the biggest city in Turkey?
+	</string>
+	<string name="biggestCityTurkeyQA">
+	    A. Istanbul
+	</string>
+	<string name="biggestCityTurkeyQB">
+	    B. Ankara
+	</string>
+	<string name="biggestCityTurkeyQC">
+	    C. Izmir
+	</string>
+	
+	
+	
+	<string name="topkapiQ">
+	    You visit Topkapi Palace. It used to be
+	</string>
+	<string name="topkapiQA">
+	    A. A palace
+	</string>
+	<string name="topkapiQB">
+	    B. A bath
+	</string>
+	<string name="topkapiQC">
+	    C. A shopping centre
+	</string>
+	
+	
+	
+	<string name="populationIstanbulQ">
+	    What is the population of Istanbul
+	</string>
+	<string name="populationIstanbulQA">
+	    A. 11 million
+	</string>
+	<string name="populationIstanbulQB">
+	    B. 13 million
+	</string>
+	<string name="populationIstanbulQC">
+	    C. 15 million
+	</string>
+	
+	
+	<string name="secondSportTurkeyQ">
+	    After soccer, what is the second most popular sport in Turkey?
+	</string>
+	<string name="secondSportTurkeyQA">
+	    A. Rugby
+	</string>
+	<string name="secondSportTurkeyQB">
+	    B. Baseball
+	</string>
+	<string name="secondSportTurkeyQC">
+	    C. Basketball
+	</string>
+
+	
+	
+	
+	
+	<!-- Lesson Strings -->
+	 <string name="home"><b>Home</b></string>
+	 <string name="level">レッスンのレベルを選ぼう。</string> <!-- Let's choose the level of the lesson. -->
+    <string name="preQ">レッスンを始める前に、事前質問の答えを考えてみよう。レッスンの役に立つからね。</string>
+    <string name="audioText"></string>
+    <string name="swipeText">終わったら、スワイプして次に進むよ！</string> <!-- When you have finished, proceed to swipe! -->
+    <string name="transcriptText"></string>
+    <string name="beginner">Beginner</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="title_activity_lesson_list">LessonList</string>
+    <string name="preQuestion">Pre-question:</string>
+    <string name="preQBuildings">Do you like old buildings?</string>
+    <string name="count"></string>
+    <string name="count3">3...</string>
+    <string name="count2">3...2...</string>
+    <string name="count1">3...2...1...</string>
+    <string name="count0">3...2...1...Playing</string>
+    <string name="transcript">There are a lot of very interesting things to see in Topkapi Palace. It is 400 years old. The royal family lived there until 1909. Now, it is a museum. The most popular exhibitions are the Treasury and the Harem. The best part was the Harem. For 400 years until 1909, about 1,000 women lived there. They were the wives and girlfriends of the Sultans. The Sultan\'s mother also lived in the Harem. She was the most powerful.</string>
+     <string name="game">Game</string>
+    <string name="lesson">Lesson</string>
+    
+    <string name="haremQ">When did women stop living in the Harem?</string>
+    <string name="haremA">A. 103 years ago\n\nB. 73 years ago\n\nC. They still live there</string>
+    
+    <string name="brotherQ">Did the Sultan\'s brother live in the Harem?</string>
+    <string name="brotherA">A. sometimes\n\nB. always\n\nC. never</string>
+    
+  <!--   <string name="topkapiQ">What is Topkapi?\n</string> -->
+    <string name="topkapiA">A. an art museum\n\nB. a palace\n\nC. an office building</string>
+    
+    <string name="continueText">continue</string>
+    <string name="scoreLesson"> Points</string>
+    <string name="extraText">There are a lot of very interesting things to see in Topkapi Palace. It is 400 years old. The royal family lived there until 1909. Now, it is a museum. The most popular exhibitions are the Treasury and the Harem. The best part was the Harem. For 400 years until 1909, about 1,000 women lived there. They were the wives and girlfriends of the Sultans. The Sultan\'s mother also lived in the Harem. She was the most powerful.
+        テスト kept 言語アプリケーションのサンプルテキスト keep 言語のアプリケーションのためのより多くのサンプルテキスト. 言語のアプリケーションのためのより多くのサンプルテキスト kept 言語のアプリケーションのためのより多くのサンプルテキスト   Now, it is a museum. The most popular exhibitions </string>
+    
+    <string name="extraText1">1. The Sultan kept his wives and concubines at the palace.</string>
+    <string name="extraJap1">スルタンの宮殿で彼の妻とそばめを保った。</string>
+    <string name="extraText2">2. I keep my wallet in my pocket.</string>
+    <string name="extraJap2">私は私のポケットに財布を保つ。</string>
+    <string name="extraText3">3. Japanese businessmen often keep a bottle of whisky in a bar.</string>
+    <string name="extraJap3">日本のビジネスマンは、多くの場合、バーにウイスキーのボトルをキープ。</string>
+    <string name="extraText4">エキストラの終わり</string>
+    
+    <string name="wellDone">Well Done!\nYou have earned</string>
+    
+    <string name="likeLesson">Like this lesson</string>
+    <string name="next">What next?</string>
+	
+	
+    
+    
+        <!-- Help pages -->
+	<string name="x">X</string>
+	<string name="helpProfile">Profile Help</string>
+    <string name="helpProfileText">
+        Click on any button to access its functions i.e. click on messages to get access to your messages, etc.
+        </string>
+    
+    
+    <string name="avatarHelp">Avatar Help</string>
+    <string name="avatarHelpText">
+        Click on Mood to change the Face of your Avatar. Your Mood will appear in all messages that you send.
+       \n \nClick on Wardrobe to access clothes you have already purchased, and to change the clothes and hair items on your Avatar.
+       \n \nClick on Shop to try out and purchase new clothes for your Avatar.
+</string>
+     <string name="avatarHelpMoodText">
+        Swipe the eyes to change the eyes on your face.
+      \n  \nSwipe the nose to change the nose on your face.
+       \n \nSwipe the mouth to change the mouth on your face.
+</string>
+<string name="avatarHelpSwipeText">
+        Swipe the hair to change your hair style.
+      \n  \nSwipe the top to change your top.
+       \n \nSwipe the bottom to change your pants/dress.
+</string>
+
+     <string name="avatarStoreHelp">Avatar Store Help</string>
+    <string name="avatarStoreHelpText">
+        Select a store to purchase products from.
+</string>
+<string name="avatarCoverflowText">
+        Slide through the viewer to see the different items for sale in the shop.
+       \n \nClick on the item to turn it around and see background data on the item.
+       \n \nClick on the \" ... \" button to put the item into your \"Changing Room\" to try on at a later stage.
+       \n \nClick in the \">>>\" button to access the changing room.
+</string>
+<string name="avatarChangingRoomText">
+        Items have been added to your wardrobe.
+      \n  \nSwipe to try out items with your wardrobe.
+       \n \nClick on \" ... \" to go to the checkout and purchase items.
+</string>
+    
+    
+    
+    <!-- Privacy Page -->
+    <string name="privacyTitle">Privacy</string>
+    <string name="privacyText">
+        We respect and value your service and will treat the information you provide to us with respect, as if it was our own personal information. We would like you to fully understand what we will do, and more importantly what we will not do, as part of our service.
+    </string>
+    <string name="privacyDataTitle">Your Private Data</string>
+    <string name="privacyDataText">
+        We will not disclose any of your private data - name, e-mail address, etc. - to any 3rd party. We will not access your phone address book to contact other people in your contacts lists. We will not access or use any of your messaging data - these are private messages between you and your contacts and are not our property - they belong to you.
+    </string>
+    <string name="privacyAdTitle">Advertising</string>
+    <string name="privacyAdText">
+        We will be facilitating advertising on the service. Most of this advertising will be in the form of sponsership - countries visited in the game, travel services, fashion brands, Educational services, etc. - and it will not be intrusive. We will not allow any advertising on the site which is not compatible with the service, or which in our view is not appropriate.
+    </string>
+    <string name="privacyMessTitle">Messages</string>
+    <string name="privacyMessText">We will only store the last 7 days of messages on your account. Anything older than 7 days is automatically deleted.</string>
+    <string name="privacyLeavingTitle">Leaving the Service</string>
+    <string name="privacyLeavingText">
+        If you wish to remove yourself from the service, please contact us through this link here (Remove Member) and within 7 days we will remove all of your data from our system. We will ask you to verify this request, and a mail will be sent to your e-mail address. Once this request has been verified by e-mail we will then remove you from the service within 7 days.
+    </string>
+    
+    
+    
+    <!-- Info Page -->
+    <string name="startTitle">On Start Up</string>
+    <string name="profileTitle">Profile</string>
+    <string name="profileText">
+        You will need to register your profile with us and select your Avatar type (you can change this at a later stage). Please select carefully what information you want to make visible to other members.
+    </string>
+    <string name="avatarWard">Avatar Wardrobe</string>
+    <string name="avatarWardText">
+        Each Member is allowed to select 2 Hair styles, 5 Torso garments and 5 Leg Garments from the General shop. Once these are selected, they become part of your wardrobe.
+    </string>
+    <string name="freeLessonTitle">Free Lessons</string>
+    <string name="freeLessonText">
+        There are 18 free English lessons available to all new members. These Lessons are about Turkey, its geography and its culture. You will receive one of these lessons every day (from Monday to Friday) until the 18 lessons are finished.
+    </string>
+    <string name="pointsLessonTitle">Points for Free Lessons</string>
+    <string name="pointsLessonText">
+        The points for the free Lessons are worth 1/5 of the points for the Paid Lessons - ????
+    </string>
+    <string name="paidLessonTitle">Paid Lessons</string>
+    <string name="paidLessonText">
+        Paid Lessons are available for the price of Y500 for 12 lessons - this is 4 weeks of lessons
+    </string>
+    <string name="messTitle">Messaging</string>
+    <string name="messText">
+        All members have an initial 4 week period in which to use all of the messaging features (Text, Audio, Voice Changer). After the 4 week trial period the only Messaging that is available for Free is the Text. The Audio and Voice Changer Messaging is only available to members that purchase a Paid Lesson.
+    </string>
+    <string name="howToUse">How to Use - Game Points, etc.</string>
+    <!-- @string/avatar -->
+    <string name="avatarText">
+        The Mood(...) of the Avatar can be changed by swishing over the Eyes, Nose and mouth and then pressing the Save button. The Mood you have selected is always sent with your message. The Wardrobe (...) can be changed by swishing over the various parts of the Avatar (Hair, Torso, Legs) and then pressing the Save button.
+    </string>
+    <string name="avatarShopTitle">Avatar Shop</string>
+    <string name="avatarShopText">
+        There is a dressing room feature in the Shop where you can select an item for viewing, and then view it with your own wardrobe. To Select an Item for viewing, you press the (...) button on the item and it will be stored in the wardrobe. If you wish to purchase the Item, you need to go back to the shop and press the (...) button and that will then put it into your shopping basket. You can only purchase products when you have the points available to use. When you purchase an item from the shop, the amount of points used will be deducted from your account.
+    </string>
+    <string name="avatarPointsTitle">Avatar Points</string>
+    <string name="avatarPointsText">
+        You can earn Points in the following ways \n\n
+      	  • Complete a Lesson \n
+      	  • Play the Game \n\n
+        You cannot purchase points with real money - you have to earn them by playing the game or studying a lesson. You can purchase as many lessons as your want in any given period.
+    </string>
+    <string name="interfaceTitle">Interface Language</string>
+    <string name="interfaceText">
+        The Interface langauge can be changed in your Profile and Settings Account.
+    </string>
+    <string name="paymentTitle">Payment</string>
+    <string name="paymentText">
+        You can purchase Lessons in the following ways: \n\n
+      	  • Through the Google Play store \n
+      	  • Using a credit card \n
+      	  • Using a debit card ??? \n\n
+        To purchase points please register as follows:
+        By purchasing Lessons you get access to all of the Premium messaging services (Voice and Voice Changer) for the duration of the Lesson (4 weeks).
+    </string>
+    <string name="contentTitle">Lesson Content</string>
+    <string name="contentText">
+        Initially the Lesson Content will be built around the following Genres: \n\n
+       	 • News \n
+       	 • Entertainment \n\n
+        We will select topics that have happened in the last month as the basis of each lesson, so at all times the content you study will be relevant to what is happening today. We will be adding additional Genres as the service develops (e.g. Business English, etc.). However, if you have a request for Genres of a specific type then please submit them to us below and we will try and accommodate them.
+    </string>
+    
+    
+    
+    
+    
+	
+	<!-- Sliding Menu/Action Bar Sherlock -->
+	<string name="avatar">Avatar</string>
+    <string name="message">Messages</string>
+    <string name="profile">Profile</string>
+    <string name="privacy">Privacy</string>
+    <string name="purchases">Purchases</string>
+    <string name="info">Information</string>
+    <string name="avatarLink">Mood/Style</string>
+   <string name="settings">Settings</string>
+    <string name="latest">Latest Content</string>
+    <string name="contactUs">Contact Us</string>
+    
+    
+    <string name="properties">SlidingMenu Properties</string>
+    <string name="general">General</string>
+    <string name="viewpager">ViewPager</string>
+    <string name="attach">Attach</string>
+    <string name="title_bar">Title Bar Options</string>
+    <string name="title_bar_slide">Sliding Title Bar</string>
+    <string name="title_bar_content">Sliding Content Only</string>
+    <string name="animations">Custom Animations</string>
+    <string name="anim_zoom">Zoom</string>
+    <string name="anim_scale">Scale</string>
+    <string name="anim_fold">Fold</string>
+    <string name="anim_slide">Slide Up</string>
+    <string name="changing_fragments">Changing Fragments</string>
+    <string name="responsive_ui">Responsive UI</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="left_and_right">Left and Right</string>
+    <string name="github">GitHub</string>
+    <string name="github_label">SlidingMenu on GitHub</string>
+    <string name="what_is_this">What is this?</string>
+    <string name="responsive_explanation">This is an example of a UI that responds well to device type. On phones, the menu will be placed inside a SlidingMenu, while on tablets the menu will be exposed alongside the content because we have enough room to always show it.</string>
+    <string name="about">About</string>
+    <string name="licenses">Licenses</string>
+    <string name="contact">Contact</string>
+    <string name="about_msg">&lt;b>SlidingMenu&lt;/b> is an Open Source Android library 
+        that allows developers to easily create applications with sliding menus like those 
+        made popular in the Google+, YouTube, and Facebook applications. 
+        You can find it on GitHub by clicking the little octocat icon in the ActionBar. 
+        Feel free to use it all you want in your Android apps provided 
+        that you cite this project and include the license in your app.
+        &lt;br>&lt;br>
+		SlidingMenu is currently used in some incredibly popular Android 
+		apps such as Zappos, Plume, VLC for Android, and The Verge. 
+		If you are using SlidingMenu in your app and would like to be 
+		listed here, please let me know via Twitter (@slidingmenu)!</string>
+    <string name="apache_license">&lt;b>SlidingMenu &lt;/b>&lt;br>
+        \u00A9 2012 Jeremy Feinstein&lt;br>
+        SlidingMenu is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+        &lt;b>ActionBarSherlock &lt;/b>&lt;br>
+        \u00A9 2012 Jake Wharton&lt;br>
+        ActionBarSherlock is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+		&lt;b>The Apache License Version 2.0&lt;/b>&lt;br>
+		You may obtain a copy of the License at&lt;br>
+		&lt;center>&lt;a href=\'http://www.apache.org/licenses/LICENSE-2.0\'>
+				"http://www.apache.org/licenses/LICENSE-2.0&lt;/a>&lt;/center>&lt;br>
+		Unless required by applicable law or agreed to in writing, 
+		software distributed under the License is distributed on an 
+		\'AS IS\' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+		either express or implied. See the License for the specific 
+		language governing permissions and limitations under the License.</string>
+    <string name="no_email">Sorry, I couldn\'t find any e-mail apps on your phone</string>
+	
+	
+	
+    
+    
+
+	
+	
+	
+</resources>

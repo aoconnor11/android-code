@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+ 
+    <RelativeLayout
+        android:id="@+id/relLayoutSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/background" >
+
+        <TextView
+            android:id="@+id/textViewHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/home"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+               
+        <LinearLayout
+            android:id="@+id/linearLayout2Splash2"
+            android:layout_width="fill_parent"
+                android:layout_height="50dp"
+            android:layout_above="@+id/relLayoutSplash2"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutSplash1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout2Splash2"
+            android:layout_alignLeft="@+id/linearLayout2Splash2"
+            android:layout_alignRight="@+id/linearLayout2Splash2"
+            android:layout_alignTop="@+id/linearLayout2Splash2" >
+
+            <TextView
+                android:id="@+id/textViewSplash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/home"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:id="@+id/linearLayout2Splash"
+            android:layout_width="fill_parent"
+                android:layout_height="50dp"
+            android:layout_above="@+id/relLayoutSplash3"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutSplash2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout2Splash"
+            android:layout_alignLeft="@+id/linearLayout2Splash"
+            android:layout_alignRight="@+id/linearLayout2Splash"
+            android:layout_alignTop="@+id/linearLayout2Splash" >
+
+            <TextView
+                android:id="@+id/textViewBeginnerSplash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/lesson"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3Splash"
+                  android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="375dp"
+           
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutSplash3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton2"
+            android:layout_alignBottom="@+id/linearLayout3Splash"
+            android:layout_alignLeft="@+id/linearLayout3Splash"
+            android:layout_alignRight="@+id/linearLayout3Splash"
+            android:layout_alignTop="@+id/linearLayout3Splash" >
+
+            <TextView
+                android:id="@+id/textViewInterSplash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/game"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+   <!--       <LinearLayout
+            android:id="@+id/linearLayout2Splash2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="135dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="275dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutSplash1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout2Splash2"
+            android:layout_alignLeft="@+id/linearLayout2Splash2"
+            android:layout_alignRight="@+id/linearLayout2Splash2"
+            android:layout_alignTop="@+id/linearLayout2Splash2" >
+
+            <TextView
+                android:id="@+id/textViewSplash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/home"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2Splash"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="85dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="325dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutSplash2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout2Splash"
+            android:layout_alignLeft="@+id/linearLayout2Splash"
+            android:layout_alignRight="@+id/linearLayout2Splash"
+            android:layout_alignTop="@+id/linearLayout2Splash" >
+
+            <TextView
+                android:id="@+id/textViewBeginnerSplash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/lesson"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3Splash"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="375dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutSplash3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout3Splash"
+            android:layout_alignLeft="@+id/linearLayout3Splash"
+            android:layout_alignRight="@+id/linearLayout3Splash"
+            android:layout_alignTop="@+id/linearLayout3Splash" >
+
+            <TextView
+                android:id="@+id/textViewInterSplash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/game"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout> -->
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/help_77798" />
+
+    </RelativeLayout> 
+
+</LinearLayout>

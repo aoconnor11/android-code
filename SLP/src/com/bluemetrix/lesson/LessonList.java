@@ -1,0 +1,579 @@
+package com.bluemetrix.lesson;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.bluemetrix.R;
+import com.slidingmenu.example.fragments.FragmentChangeActivity;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+
+public class LessonList extends Activity 
+{
+	private ListView mainListView;
+	private ArrayAdapter<String> listAdapter1;
+	private TextView home;
+	private boolean networkStatus;
+	private ArrayList<String> lessonList;
+	private ArrayList<String> lessonMapList;
+	private ArrayList<String> lessonIDBegin;
+	private ArrayList<String> lessonIDInter;
+	private ArrayList<String> lessonIDAdvan;
+	private ArrayList<Lesson> lessonArray;
+	private DatabaseHandler db = new DatabaseHandler(this);
+	private CharSequence level;
+	private Lesson myLesson;
+	private String lessonLevel;
+	private HashMap lessonMap;
+	private String updateDate;
+	private static String url = "http://api.androidhive.info/contacts/";//to be changed
+	private ArrayList<HashMap<String, String>> contactList = new ArrayList<HashMap<String, String>>();//for listview - from JSON
+	 
+	//url of lessonlist
+	private String url1 = "http://wiki.bmmetrix.com:9474/lessons/retrieveLessonList/";
+	//url of lesson
+	private String url2 = "http://wiki.bmmetrix.com:9474/lessons/retrieveLessonData/?lessonid=";
+	
+	// JSON Node names
+	private static final String TAG_UPDATE_DATE = "updateDate";
+	private static final String TAG_BEGINNER = "beginner";
+	private static final String TAG_INTERMEDIATE = "intermediate";
+	private static final String TAG_ADVANCED = "advanced";
+	private static final String TAG_LESSON_1 = "lesson1";
+	private static final String TAG_LESSON_2 = "lesson2";
+	private static final String TAG_LESSON_3 = "lesson3";
+	private static final String TAG_LESSON_LIST = "lessonList";
+	
+	private static final String TAG_LESSON_ID = "lessonid";
+	private static final String TAG_DESCRIPTION = "description";
+	private static final String TAG_MEDIA_URL = "mediaurl";
+	private static final String TAG_PREQUESTION = "prequestion";
+	private static final String TAG_EXTRAS = "Extras";
+	private static final String TAG_TRANSCRIPT = "Transcript";
+	private static final String TAG_MCQ = "mcq";
+	private static final String TAG_MCQ_1 = "mcq1";
+	private static final String TAG_MCQ_2 = "mcq2";
+	private static final String TAG_MCQ_3 = "mcq3";
+	private static final String TAG_QUESTION = "question";
+	private static final String TAG_OPTION_1 = "option1";
+	private static final String TAG_OPTION_2 = "option2";
+	private static final String TAG_OPTION_3 = "option3";
+	private static final String TAG_ANSWER = "answer";
+	private static final String TAG_LESSON_DATA = "lessonData";
+ 
+	// lessons JSONArray
+	JSONArray lessons = null;
+	JSONArray lessonsData = null;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.lesson_list_view);
+		
+		Intent i = getIntent();//get intent from previous activity
+		level = i.getExtras().getCharSequence("level");
+		lessonLevel = level.toString();
+		
+		mainListView = (ListView) findViewById(R.id.listView1);
+		home = (TextView) findViewById(R.id.textViewHomeLessonList);
+		
+		home.setOnClickListener(new View.OnClickListener() 
+		{
+			public void onClick(View view) 
+			{
+				goHome();//go to app home - not lesson home
+			}
+		});
+		
+
+		lessonList = new ArrayList<String>();
+		lessonMap = new HashMap<String, String>();
+		lessonMapList = new ArrayList<String>();
+		lessonArray = new ArrayList<Lesson>();
+		myLesson = new Lesson();
+
+		listAdapter1 = new ArrayAdapter<String>(this, R.layout.simplerow, lessonList)
+		{
+			public View getView(int position, View convertView, ViewGroup parent) 
+			{
+				View view = super.getView(position, convertView, parent);
+				TextView textView = (TextView) view.findViewById(R.id.rowTextView);				
+				textView.setTextColor(getResources().getColor(R.color.black));
+				return view;
+			}
+		};
+		networkStatus = isNetworkAvailable();
+				
+		if(networkStatus==false)
+		{			
+			Toast.makeText(LessonList.this, "Internet Connectivity has been lost. Please check your internet connection", Toast.LENGTH_LONG).show();			
+		}
+		else
+		{
+			File dateFile = new	File(Environment.getExternalStorageDirectory().getPath()+"update.txt");
+			try 
+			{
+				dateFile.createNewFile();
+			} 
+			catch (IOException e) 
+			{
+				e.printStackTrace();
+			}	
+		
+			try 
+			{
+				lessonMap =	new DownloadLessonList().execute(lessonLevel).get();
+			} 
+			catch (InterruptedException e) 
+			{
+				e.printStackTrace();
+			} 
+			catch (ExecutionException e) 
+			{
+				e.printStackTrace();
+			}
+		
+			for (int k=0; k < lessonMap.size(); k++) 
+			{
+				//Lesson List
+				String key = (String)lessonMap.keySet().toArray()[k];
+				String val = (String)lessonMap.values().toArray()[k];
+				System.out.println("key,val: " + key + "," + val);
+				lessonMapList.add(val);
+				
+			}
+		
+			System.out.print("\nLesson IDs Array: " + lessonMapList.toString());
+			Toast.makeText(LessonList.this, "download List Main " + lessonMap.toString(), Toast.LENGTH_LONG).show();	
+		
+			String lessonUrl = (url2 + 43);
+			try 
+			{
+				myLesson =	new DownloadLessons().execute(lessonUrl).get();
+				lessonArray.add(myLesson);//add each lesson to array as downloaded from server - then serialize to sd card
+			} 
+			catch (InterruptedException e) 
+			{
+				e.printStackTrace();
+			} 
+			catch (ExecutionException e) 
+			{
+				e.printStackTrace();
+			}
+			System.out.println("\nLesson Data Lesson Object: " + myLesson.getId());
+			System.out.println("\nLesson Data Array: " + lessonArray.get(0).getLessonTitle());
+		}
+		//save array - serialise
+		try         
+		{            
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(Environment.getExternalStorageDirectory().getPath()+"/lessons.bin"))); 
+			//Select where you wish to save the file...            
+			oos.writeObject(lessonArray); // write the class as an 'object'            
+			oos.flush(); // flush the stream to insure all of the information was written to 'save_object.bin'            
+			oos.close();// close the stream         
+		}         
+		catch(Exception ex)         
+		{            
+			Log.v("Serialization Save Error : ",ex.getMessage());            
+			ex.printStackTrace();        
+		}	
+		
+		//lessonList
+		for(int l = 0; l < lessonArray.size(); l++)
+		{
+			//test when lessons have ids same as lesson list
+			String arrayID = lessonArray.get(l).getId();
+			String arrayTitle = lessonArray.get(l).getLessonTitle();
+			
+			lessonList.add(arrayTitle);//add lesson title to list for list view
+				
+		}			
+		for(int j = 0; j<lessonList.size(); j++)
+		{
+			//listAdapter1.add(lessonList.get(j));
+		}
+
+		mainListView.setAdapter(listAdapter1);		
+		mainListView.setOnItemClickListener(new OnItemClickListener() 
+		{
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
+			{
+				String lessonTitle = ((TextView) view).getText().toString();
+				Lesson myLesson = openLessons(lessonTitle);
+				startLesson(myLesson);
+			
+			}
+		});
+	}
+	
+	public Lesson openLessons(String lessonTitle)//also open update date
+	{	
+		Lesson lesson1 = new Lesson();
+		ArrayList<Lesson> list = (ArrayList<Lesson>)loadSerializedObject(new File(Environment.getExternalStorageDirectory().getPath()+"/lessons.bin"));
+		 	
+		for(int i = 0; i<list.size(); i++)
+		{	
+			String listTitle = list.get(i).getLessonTitle();
+			if(lessonTitle.equals(listTitle))
+			{
+				lesson1 = list.get(i);
+			}		
+		}		
+		return lesson1;
+	}	
+	
+	public String openUpdateDate()
+	{
+		//to check with update date from lessonlist to see if new lessons need to be downloaded???
+		String update = null;		
+		try 
+		{
+			File myFile = new File(Environment.getExternalStorageDirectory().getPath()+"update.txt");
+			FileInputStream fIn = new FileInputStream(myFile);
+			BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn));
+			String aDataRow = "";
+			String aBuffer = "";
+			while ((aDataRow = myReader.readLine()) != null) 
+			{
+				aBuffer += aDataRow;
+			}
+			update = aBuffer;
+			//txtData.setText(aBuffer);
+			myReader.close();
+		} 
+		catch (Exception ex) 
+		{
+			Log.v("Serialization Save Error : ",ex.getMessage());            
+			ex.printStackTrace();   
+		}
+	return update;
+	}
+
+
+	public void saveLesson(Lesson lesson)
+	{
+		//serialize to sd card for future		
+		String id = lesson.getId();	
+		try         
+		{            
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(Environment.getExternalStorageDirectory().getPath()+"/lesson"+id+".bin"))); 
+			//Select where you wish to save the file...            
+			oos.writeObject(lesson); // write the class as an 'object'            
+			oos.flush(); // flush the stream to insure all of the information was written to 'save_object.bin'            
+			oos.close();// close the stream         
+		}         
+		catch(Exception ex)         
+		{            
+			Log.v("Serialization Save Error : ",ex.getMessage());            
+			ex.printStackTrace();        
+		}
+	}
+
+	public void saveUpdateDate(String date)
+	{
+		
+		try         
+		{     
+			File myFile = new File(Environment.getExternalStorageDirectory().getPath()+"update.txt");
+			FileOutputStream fOut = new FileOutputStream(myFile, false);//to overwrite existing update date if any
+			OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
+			myOutWriter.append(date);
+			myOutWriter.close();
+			fOut.flush();
+			fOut.close();        
+		}         
+		catch(Exception ex)         
+		{            
+			Log.v("Serialization Save Error : ",ex.getMessage());            
+			ex.printStackTrace();        
+		}
+	}	
+	
+	public void changeStatus(Lesson lesson)
+	{	
+		db.updateLesson(lesson);	
+	}
+	
+	public boolean checkLessonStatus(int id)
+	{
+		boolean status = false;
+		int sdStatus;
+		
+		Lesson myLesson  = db.getById(id);
+		sdStatus = myLesson.getSdStatus();
+		
+		if(sdStatus==1)
+		{
+			status = true;
+		}
+		else if (sdStatus==0)
+		{
+			status = false;
+		}				
+		return status;
+	}
+
+	//check if network is there before downloading
+	public boolean isNetworkAvailable() 
+	{
+	    ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+	    // if no network is available networkInfo will be null
+	    // otherwise check if we are connected
+	    if (networkInfo != null && networkInfo.isConnected()) 
+	    {
+	        return true;
+	    }
+	    return false;
+	} 
+	
+
+	
+	
+	
+	private class DownloadLessons extends AsyncTask<String, Integer, Lesson>
+	{
+		@Override
+		protected Lesson doInBackground(String... urls) 
+		{	
+	        String myurl = urls[0];
+	        // Creating JSON Parser instance
+		    JSONParser jParser = new JSONParser();	
+	        // getting JSON string from URL
+	        JSONObject json = jParser.getJSONFromUrl(myurl);
+			try
+			{
+				
+	 
+				String lessonID = json.getString(TAG_LESSON_ID);
+				String description = json.getString(TAG_DESCRIPTION);
+				String mediaURL = json.getString(TAG_MEDIA_URL);//use url to get audio file - to download
+				String prequestion = json.getString(TAG_PREQUESTION);
+				String extras = json.getString(TAG_EXTRAS);
+				String transcript = json.getString(TAG_TRANSCRIPT);
+					
+				JSONObject mcq = json.getJSONObject(TAG_MCQ);
+				JSONObject mcq1 = mcq.getJSONObject(TAG_MCQ_1);
+				String question1 = mcq1.getString(TAG_QUESTION);
+				String option1A = mcq1.getString(TAG_OPTION_1);
+				String option1B  = mcq1.getString(TAG_OPTION_2);
+				String option1C = mcq1.getString(TAG_OPTION_3);
+				String answer1 = mcq1.getString(TAG_ANSWER);
+					
+				JSONObject mcq2 = mcq.getJSONObject(TAG_MCQ_2);
+				String question2 = mcq2.getString(TAG_QUESTION);
+				String option2A = mcq2.getString(TAG_OPTION_1);
+				String option2B  = mcq2.getString(TAG_OPTION_2);
+				String option2C = mcq2.getString(TAG_OPTION_3);
+				String answer2 = mcq2.getString(TAG_ANSWER);
+					
+				JSONObject mcq3 = mcq.getJSONObject(TAG_MCQ_3);
+				String question3 = mcq3.getString(TAG_QUESTION);
+				String option3A = mcq3.getString(TAG_OPTION_1);
+				String option3B  = mcq3.getString(TAG_OPTION_2);
+				String option3C = mcq3.getString(TAG_OPTION_3);
+				String answer3 = mcq3.getString(TAG_ANSWER);
+					
+				Lesson l = new Lesson();
+				l.setId(lessonID);
+				l.setSdStatus(1);//arraylist of lessons to be serialized onto SDCard
+				l.setLessonTitle(description);//assume lesson title - to be displayed in listview
+				l.setAudioPath(mediaURL);//url of audio - to be downloaded?? or streamed live??
+				l.setPreQuestion(prequestion);
+				l.setExtras(extras);
+				l.setTranscript(transcript);
+				l.setQuestion1(question1);
+				l.setQuestion2(question2);
+				l.setQuestion3(question3);
+				l.setOption1A(option1A);
+				l.setOption1B(option1B);
+				l.setOption1C(option1C);
+				l.setOption2A(option2A);
+				l.setOption2B(option2B);
+				l.setOption2C(option2C);
+				l.setOption3A(option3A);
+				l.setOption3B(option3B);
+				l.setOption3C(option3C);
+				l.setAnswer1(answer1);
+				l.setAnswer2(answer2);
+				l.setAnswer3(answer3);
+				//set lesson details;
+				//add to lesson arraylist - then serialise array list to store lessons
+				//	lessonArray.add(l);
+				//      }
+				return l;	                
+	        } 
+	        catch (JSONException e) 
+	        {
+	            e.printStackTrace();
+	        }		
+			return null;
+		}
+		
+		protected void onPostExecute(Lesson result) 
+		{
+			
+	         System.out.println("download TEST");
+	         myLesson = result;
+		}	
+	}
+	
+
+	//private class HashMap downloadLessonList(String level) extends AsyncTask	
+	private class DownloadLessonList extends AsyncTask<String, Void, HashMap>
+	{	
+		HashMap<String, String> mapBegin = new HashMap<String, String>();
+		HashMap<String, String> mapInter = new HashMap<String, String>();
+		HashMap<String, String> mapAdvan = new HashMap<String, String>();
+	
+		@Override
+		protected HashMap doInBackground(String... level) 
+		{
+			System.out.print("start download");
+			String level1 = level[0];
+			// Creating JSON Parser instance
+	        JSONParser jParser = new JSONParser();
+	        // getting JSON string from URL
+	        JSONObject json = jParser.getJSONFromUrl(url1);
+			
+			try 
+			{
+				
+				updateDate = json.getString(TAG_UPDATE_DATE);
+					
+				JSONObject beginner = json.getJSONObject(TAG_BEGINNER);
+				String lessonb1 = beginner.getString(TAG_LESSON_1);
+				String lessonb2 = beginner.getString(TAG_LESSON_2);
+				String lessonb3 = beginner.getString(TAG_LESSON_3);
+					
+				JSONObject inter = json.getJSONObject(TAG_INTERMEDIATE);
+				String lessoni1 = inter.getString(TAG_LESSON_1);
+				String lessoni2 = inter.getString(TAG_LESSON_2);
+				String lessoni3 = inter.getString(TAG_LESSON_3);
+	 
+				JSONObject advance = json.getJSONObject(TAG_ADVANCED);
+				String lessona1 = advance.getString(TAG_LESSON_1);
+				String lessona2 = advance.getString(TAG_LESSON_2);
+				String lessona3 = advance.getString(TAG_LESSON_3);
+	 
+				System.out.print("Lesson List " + lessonb1);
+	           
+				mapBegin = new HashMap<String, String>();
+				mapInter = new HashMap<String, String>();
+				mapAdvan = new HashMap<String, String>();
+	 
+	            // adding each child node to HashMap key => value
+				mapBegin.put(TAG_LESSON_1, lessonb1);
+				mapBegin.put(TAG_LESSON_2, lessonb2);
+				mapBegin.put(TAG_LESSON_3, lessonb3);
+					
+				mapInter.put(TAG_LESSON_1, lessoni1);
+				mapInter.put(TAG_LESSON_2, lessoni2);
+				mapInter.put(TAG_LESSON_3, lessoni3);
+					
+				mapAdvan.put(TAG_LESSON_1, lessona1);
+				mapAdvan.put(TAG_LESSON_2, lessona2);
+				mapAdvan.put(TAG_LESSON_3, lessona3);
+					
+	            if(level1.equals("beginner"))
+	            {
+	            	contactList.add(mapBegin);
+	            	System.out.print("Lesson List " + lessonb1);
+	                return mapBegin;
+	            }
+	            else if(level1.equals("intermediate"))
+	            {
+	                contactList.add(mapBegin);
+	                return mapBegin;
+	            }
+	            else if(level1.equals("advanced"))
+	            {
+	                contactList.add(mapBegin);
+	                return mapBegin;
+	            }
+	           
+	        } 
+			catch (JSONException e) 
+			{
+	            e.printStackTrace();
+	        }
+		
+
+			return mapBegin;
+		}
+		
+
+		protected void onPostExecute(HashMap result) 
+		{
+		
+			lessonMap =	result; 
+	
+			System.out.print("test lessonMap");      
+	     }
+	}
+
+	
+
+	public Object loadSerializedObject(File f)    
+	{        
+		try        
+		{            
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));           
+			Object o = ois.readObject();            
+			return o;        
+		}        
+		catch(Exception ex)       
+		{        
+			Log.v("Serialization Read Error : ",ex.getMessage());            
+			ex.printStackTrace();        
+		}        
+		return null;    
+	}
+	
+	public void goHome() //send to avatar screen
+	{
+		Intent in = new Intent(this, FragmentChangeActivity.class);
+		startActivity(in);
+	}
+		
+	//Go to lesson
+	public void startLesson(Lesson lesson) 
+	{
+		System.out.println(lesson.getLessonTitle());//test if lesson downloaded
+		Intent in = new Intent(this, PreQuestionView.class);
+		in.putExtra("lesson", lesson);
+		startActivity(in);
+	}	
+}
