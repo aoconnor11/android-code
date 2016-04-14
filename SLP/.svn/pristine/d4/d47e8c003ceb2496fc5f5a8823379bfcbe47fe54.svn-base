@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        
+     <EditText
+            android:id="@+id/editTextGroupName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            	android:layout_marginLeft="10dp"
+            	android:layout_marginRight="10dp"
+            	android:hint="Enter a new group name"
+            android:background="@drawable/roundbutton2"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+    
+    
+    
+    
+     		<ListView
+     		    android:id="@+id/listViewGroups"
+     		    android:layout_width="match_parent"
+     		    android:layout_height="match_parent"
+     		    android:layout_marginTop="100dp" >
+
+            </ListView>
+    
+    
+    <!-- get proper message_row.xml icon for arrow -->
+
+     		<TextView
+     		    android:id="@+id/textViewSelectFriends"
+     		    android:layout_width="wrap_content"
+     		    android:layout_height="wrap_content"
+     		    android:layout_below="@+id/editTextGroupName"
+     		    android:layout_centerHorizontal="true"
+     		    android:textColor="#778899"
+     		    android:layout_marginTop="17dp"
+     		    android:text="Select Friends to Add"
+     		    android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+        </RelativeLayout>
+</LinearLayout>

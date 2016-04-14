@@ -1,0 +1,460 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bluemetrix"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name ="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    <application
+        android:allowBackup="true"
+       android:debuggable="true" 
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <!-- remove debuggable  -->
+        
+        
+        <!-- Friends -->
+         <activity
+            android:name="com.bluemetrix.friends.FriendsMenu"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.friends.AddFriends"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.friends.FindFriendsList"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+           <activity
+            android:name="com.bluemetrix.friends.FriendsRequests"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+            <activity
+            android:name="com.bluemetrix.friends.FriendsList"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+           
+         <activity
+            android:name="com.bluemetrix.friends.LeagueTable"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.friends.GroupList"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.friends.CreateGroup"
+             android:icon="@drawable/abs_icon"
+             android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         
+         
+        
+       <!-- Messages -->
+          <activity
+            android:name="com.bluemetrix.messages.MessageList"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.messages.MessageView"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.messages.AudioRecord"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        
+        
+        
+        
+        <!-- Help Activities -->
+         <activity
+            android:name="com.bluemetrix.help.AppHelpFragment"
+             android:icon="@drawable/abs_icon"
+                 android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         
+         <activity
+            android:name="com.bluemetrix.help.LearnMoreHelp"
+             android:icon="@drawable/abs_icon"
+                 android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         
+        
+        <!-- Wheel activities -->
+        
+        <activity
+            android:name="com.bluemetrix.wheel.widget.BloodTypeActivity"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.wheel.widget.SelectAgeActivity"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!-- Log In -->
+        
+        
+        <activity
+            android:name="com.bluemetrix.login.LoginView"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+            
+                        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> 
+        </activity>
+        
+        
+        
+        <activity
+            android:name="com.bluemetrix.login.SettingsFragment"
+             android:icon="@drawable/abs_icon"
+                 android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.login.ResetPassView"
+             android:icon="@drawable/abs_icon"
+            android:label="@string/app_name" 
+            android:theme="@style/Theme.Sherlock.Light.DarkActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.bluemetrix.login.SignUpView"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        
+        
+        
+           <!-- Avatar activities -->
+           
+            <activity
+            android:name="com.bluemetrix.avatar.CheckoutView"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.avatar.PurchaseView"
+             android:icon="@drawable/abs_icon"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.avatar.MainView"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.avatar.CoverFlow"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+                android:theme="@android:style/Theme.NoTitleBar"
+              android:screenOrientation="portrait">
+            
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.avatar.CoverFlowExample"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+                android:theme="@android:style/Theme.NoTitleBar"
+              android:screenOrientation="portrait">
+</activity>
+        
+        
+         <activity
+            android:name="com.bluemetrix.avatar.ShopsView"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+               android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.avatar.MoodView"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@style/Theme.Sherlock.Light.DarkActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        
+        
+        
+        
+        
+        <!-- Game activities -->
+        <activity
+            android:name="com.bluemetrix.game.activities.SceneSelectionView"
+            android:label="@string/app_name" 
+             android:icon="@drawable/nav_menu_icon"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.game.activities.InitialView"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.game.nodes.InitialNode"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.game.nodes.QuestionNode"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.game.nodes.FinalNode"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.game.nodes.BranchNode"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.game.nodes.SceneSelectionNode"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.game.activities.FinalView"
+            android:label="@string/app_name" 
+             android:icon="@drawable/nav_menu_icon"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+         <activity
+            android:name="com.bluemetrix.game.activities.BranchView"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.game.activities.QuestionView"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape" >
+        </activity>
+   
+        
+        
+        <!-- Lesson activities -->
+        
+        <activity
+            android:name="com.bluemetrix.lesson.SplashScreen"
+            android:label="@string/app_name" 
+             android:icon="@drawable/nav_menu_icon"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.bluemetrix.lesson.WelcomeScreen"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+             android:name="com.bluemetrix.lesson.LessonList"
+         	 android:label="@string/app_name" 
+         	  android:icon="@drawable/nav_menu_icon"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+        <activity
+             android:name="com.bluemetrix.lesson.MenuScreen"
+         	 android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+             android:icon="@drawable/nav_menu_icon"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+        <activity
+             android:name="com.bluemetrix.lesson.PreQuestionView"
+         	 android:label="@string/app_name" 
+         	  android:icon="@drawable/nav_menu_icon"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+        <activity
+             android:name="com.bluemetrix.lesson.AudioScreen"
+         	 android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+             android:icon="@drawable/nav_menu_icon"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+        <activity
+             android:name="com.bluemetrix.lesson.LessonQuestions"
+              android:icon="@drawable/nav_menu_icon"
+         	 android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+        <activity
+             android:name="com.bluemetrix.lesson.LessonQuestionNode"
+              android:icon="@drawable/nav_menu_icon"
+         	 android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+         <activity
+             android:name="com.bluemetrix.lesson.ExtrasScreen"
+              android:icon="@drawable/nav_menu_icon"
+         	 android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+         <activity
+             android:name="com.bluemetrix.lesson.FinishLesson"
+              android:icon="@drawable/nav_menu_icon"
+         	 android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+        
+        
+        
+     <!-- Sliding Menu -->   
+           <activity
+            android:name="com.example.testslidingmenu.MainActivity"
+             android:icon="@drawable/nav_menu_icon"
+            android:label="@string/app_name" >
+            
+        </activity>
+        <!-- android:theme="@style/Theme.Sherlock.Light.DarkActionBar" -->
+        <activity
+            android:name=".ExampleListActivity"
+            android:configChanges="orientation|screenSize|screenLayout"
+             android:icon="@drawable/nav_menu_icon"
+            android:theme="@style/Theme.Sherlock"
+            android:uiOptions="splitActionBarWhenNarrow" >
+          
+        </activity>
+        <activity android:name=".PropertiesActivity" />
+        <activity android:name=".LeftAndRightActivity" />
+        <activity android:name=".AttachExample" />
+        <activity android:name=".anim.CustomScaleAnimation" />
+        <activity android:name=".anim.CustomZoomAnimation" />
+        <activity android:name=".anim.CustomRotateAnimation" />
+        <activity android:name=".anim.CustomSlideAnimation" />
+        <activity android:name=".SlidingTitleBar" />
+        <activity android:name=".SlidingContent" />
+        <activity android:name=".ViewPagerActivity" />
+        
+        <activity android:name="com.slidingmenu.example.fragments.FragmentChangeActivity" 
+             android:icon="@drawable/nav_menu_icon"
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:theme="@style/Theme.Sherlock.Light.DarkActionBar"
+            android:uiOptions="splitActionBarWhenNarrow" >
+
+            
+            
+            
+            
+            
+            </activity>
+            
+        <activity android:name="com.slidingmenu.example.fragments.ResponsiveUIActivity" />
+        <activity
+            android:name=".fragments.BirdActivity"
+            android:theme="@style/Theme.Sherlock.Light.DarkActionBar" />
+        <activity android:name="com.crittercism.NotificationActivity"/>
+        
+        
+        
+        
+    </application>
+
+</manifest>

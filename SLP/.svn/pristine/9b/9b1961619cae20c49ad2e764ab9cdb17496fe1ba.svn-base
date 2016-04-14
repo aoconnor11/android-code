@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Downloads/JakeWharton-ActionBarSherlock-4.2.0-0-g90939dc/JakeWharton-ActionBarSherlock-e5c2d1c/library.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Downloads/adt-bundle-windows-x86/adt-bundle-windows-x86/sdk/add-ons/addon-google_apis-google-14/libs/maps.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

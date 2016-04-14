@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relLayoutFinal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/background" >
+
+        <TextView
+            android:id="@+id/textViewHomeFinal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textColor="#35B7B3"
+            android:text="@string/home"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+               
+        <LinearLayout
+            android:id="@+id/linearLayoutDone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="250dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayoutDone"
+            android:layout_alignLeft="@+id/linearLayoutDone"
+            android:layout_alignRight="@+id/linearLayoutDone"
+            android:layout_alignTop="@+id/linearLayoutDone" >
+            
+            <TextView
+                android:id="@+id/textViewScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_below="@+id/textViewDone"                
+                android:paddingTop="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#228b22"
+                android:textSize="25sp"
+                />
+
+            <TextView
+                android:id="@+id/textViewDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="29dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/wellDone"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff0000"
+                android:textSize="25sp" />
+        </RelativeLayout>      
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+                android:layout_height="50dp"
+            android:layout_above="@+id/relLayoutNext"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout2"
+            android:layout_alignLeft="@+id/linearLayout2"
+            android:layout_alignRight="@+id/linearLayout2"
+            android:layout_alignTop="@+id/linearLayout2" >
+
+            <TextView
+                android:id="@+id/textViewLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/likeLesson"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+                  android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="375dp"
+           
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relLayoutNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton2"
+            android:layout_alignBottom="@+id/linearLayout3"
+            android:layout_alignLeft="@+id/linearLayout3"
+            android:layout_alignRight="@+id/linearLayout3"
+            android:layout_alignTop="@+id/linearLayout3" >
+
+            <TextView
+                android:id="@+id/textViewNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/next"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4682b4"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relLayoutNext"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/help_77798" />
+
+    </RelativeLayout>
+</LinearLayout>

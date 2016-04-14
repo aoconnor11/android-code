@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"  
+    android:background="@drawable/background"
+    >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <EditText
+            android:id="@+id/editTextNameSettings"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/roundbutton2"
+            android:ems="10"
+            android:hint="@string/nameHint" >
+
+            <requestFocus />
+        </EditText>
+        
+        
+        <LinearLayout
+            android:id="@+id/linearLayoutResetPass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/buttonFemale"
+            android:layout_alignLeft="@+id/buttonMale"
+            android:layout_below="@+id/editTextNameSettings"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textViewResetPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/resetPass"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#4682b4"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+<!-- 
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="60dp"
+            android:inputType="textPassword"
+            android:background="@drawable/roundbutton2"
+            android:ems="10"
+            android:hint="@string/passwordHint" />
+
+        <EditText
+            android:id="@+id/editTextConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="105dp"
+            android:inputType="textPassword"
+            android:background="@drawable/roundbutton2"
+            android:ems="10"
+            android:hint="@string/confirmPasswordHint" /> -->
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="150dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/roundbutton2"
+            android:ems="10"
+            android:hint="@string/emailHint" />
+
+ 
+
+        <Button
+            android:id="@+id/buttonMale"
+            style="@style/button_text_checkout"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonFemale"
+            android:layout_alignBottom="@+id/buttonFemale"
+            android:layout_alignLeft="@+id/editTextEmail"
+            android:background="@drawable/button_checkout"
+            android:padding="8dp"
+            android:text="@string/male" />
+
+        <Button
+            android:id="@+id/buttonFemale"
+            style="@style/button_text_checkout"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextEmail"
+            android:layout_alignRight="@+id/editTextEmail"
+            android:layout_marginBottom="31dp"
+            android:background="@drawable/button_checkout"
+            android:padding="8dp"
+            android:text="@string/female" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSendMessage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/buttonFemale"
+            android:layout_alignLeft="@+id/buttonMale"
+            android:layout_below="@+id/buttonMale"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textViewBloodType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:text="@string/bloodType"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ImageView
+                    android:id="@+id/imageViewBloodType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/forward" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/linearLayoutSendMessage"
+            android:layout_alignRight="@+id/linearLayoutSendMessage"
+            android:layout_below="@+id/linearLayoutSendMessage"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/roundbutton2"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textViewAgeRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                          android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:text="@string/ageRange"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ImageView
+                    android:id="@+id/imageViewAgeRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/forward" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/linearLayoutResetPass"
+            android:layout_below="@+id/editTextNameSettings"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/resetSent"
+             android:textColor="#ffffff"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+</LinearLayout>

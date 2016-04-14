@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+         <TextView
+             android:id="@+id/textViewExit"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentTop="true"
+             android:padding="10dp"
+             android:textStyle="bold"
+             android:text="@string/x" />
+
+         <TextView
+             android:id="@+id/textViewAvatarStoreHelp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/textViewExit"
+             android:layout_marginLeft="16dp"
+             android:layout_toRightOf="@+id/textViewExit"
+             android:textStyle="bold"
+             android:text="@string/avatarStoreHelp"
+             android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+         <LinearLayout
+            android:id="@+id/linearLayoutAvatarText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBottom="@+id/linearLayoutAvatarText"
+               android:layout_alignLeft="@+id/textViewAvatarStoreHelp"
+               android:layout_alignRight="@+id/linearLayoutAvatarText"
+               android:layout_alignTop="@+id/linearLayoutAvatarText" >
+         
+          <ScrollView
+                android:id="@+id/ScrollViewAvatarText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+         
+         <TextView
+             android:id="@+id/textViewAvatarStoreHelpText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/avatarStoreHelpText" />
+         </ScrollView>
+         </RelativeLayout>       
+    </RelativeLayout>
+</LinearLayout>

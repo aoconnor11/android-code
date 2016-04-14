@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"  
+    android:background="@drawable/background"
+    >
+    
+<RelativeLayout   
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+ <LinearLayout
+      android:id="@+id/linearLayoutSendMessage"
+      android:layout_width="80dp"
+      android:layout_height="40dp"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentTop="true"
+      android:layout_marginTop="10dp"
+      android:layout_marginRight="10dp"
+      android:background="@drawable/roundbutton2"
+      android:orientation="vertical" >
+  </LinearLayout>
+    
+    
+       <RelativeLayout
+           android:id="@+id/relativeLayout1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/linearLayoutSendMessage"
+           android:layout_alignLeft="@+id/linearLayoutSendMessage"
+           android:layout_alignRight="@+id/linearLayoutSendMessage"
+           android:layout_alignTop="@+id/linearLayoutSendMessage" >
+
+           <TextView
+               android:id="@+id/textViewSendMessage"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_centerVertical="true"
+               android:text="@string/send"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textColor="#4682b4"
+               android:textStyle="bold" />
+       </RelativeLayout>
+    
+  
+
+  <com.bluemetrix.messages.MessageCoverFlow
+      android:id="@+id/coverflowMessages"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+
+      android:layout_centerVertical="true" >
+  </com.bluemetrix.messages.MessageCoverFlow>
+<!--        android:layout_marginTop="150dp"-->
+
+
+
+  <ImageView
+      android:id="@+id/imageViewMicrophone"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignTop="@+id/linearLayoutSendMessage"
+      android:src="@drawable/microphone" />
+
+  <EditText
+      android:id="@+id/editTextMessage"
+      android:layout_width="wrap_content"
+      android:layout_height="40dp"
+      android:layout_marginRight="10dp"
+      android:hint="@string/messHint"
+      android:background="@drawable/roundbutton2"
+      android:layout_alignBottom="@+id/linearLayoutSendMessage"
+      android:layout_toLeftOf="@+id/linearLayoutSendMessage"
+      android:layout_toRightOf="@+id/imageViewMicrophone"
+      android:ems="10" >
+
+      <requestFocus />
+  </EditText>
+  
+</RelativeLayout>
+        
+
+</LinearLayout>
